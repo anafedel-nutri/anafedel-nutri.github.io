@@ -3,264 +3,400 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>site - Nutricionista Ana Fedel</title>
-  <meta name="description" content="Atendimento nutricional personalizado para mulheres que desejam emagrecer, melhorar sintomas e cuidar da saúde hormonal com clareza e acompanhamento." />
+  <meta name="theme-color" content="#6b5744" />
+  <title>Ana Fedel | Nutricionista — Saúde da mulher e emagrecimento em Campinas</title>
+  <meta name="description" content="Consultoria com Ana Fedel, nutricionista em Campinas (SP): emagrecimento sustentável, saúde hormonal (TPM, SOP, menopausa), exames e acompanhamento online ou presencial. Agende sua consulta." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.anafedel.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:url" content="https://www.anafedel.com/" />
+  <meta property="og:title" content="Ana Fedel | Nutricionista — Saúde da mulher e emagrecimento" />
+  <meta property="og:description" content="Atendimento nutricional personalizado para mulheres: emagrecimento, equilíbrio hormonal e acompanhamento com ciência e escuta. Campinas e online." />
+  <meta property="og:image" content="https://www.anafedel.com/img/7715302e1fe6f8433b092a4ad29cd22cd592c8ccffeed73be338f0a362011b4d.webp" />
+  <meta property="og:image:alt" content="Logotipo Ana Fedel Nutricionista" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ana Fedel | Nutricionista" />
+  <meta name="twitter:description" content="Nutrição com ciência e escuta. Saúde da mulher, emagrecimento e acompanhamento em Campinas e online." />
+  <meta name="twitter:image" content="https://www.anafedel.com/img/7715302e1fe6f8433b092a4ad29cd22cd592c8ccffeed73be338f0a362011b4d.webp" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preload" as="image" href="./img/hero-ana-fedel-1600.jpg" fetchpriority="high" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Dietitian",
+        "@id": "https://www.anafedel.com/#profissional",
+        "name": "Ana Fedel",
+        "url": "https://www.anafedel.com/",
+        "image": "https://www.anafedel.com/img/hero-ana-fedel-1600.jpg",
+        "description": "Nutricionista com foco em saúde da mulher, emagrecimento sustentável, equilíbrio hormonal e acompanhamento nutricional personalizado.",
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": "Campinas",
+          "containedInPlace": { "@type": "Country", "name": "Brasil" }
+        },
+        "sameAs": ["https://www.instagram.com/nutrianafedel"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.anafedel.com/#site",
+        "url": "https://www.anafedel.com/",
+        "name": "Ana Fedel Nutricionista",
+        "inLanguage": "pt-BR",
+        "publisher": { "@id": "https://www.anafedel.com/#profissional" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Como funciona a avaliação física?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Presencial: bioimpedância, dobras cutâneas, medidas e fotos. Online: guia com instruções de medidas + envio de fotos e peso."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Como é o suporte?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Acompanhamento direto comigo via WhatsApp, com respostas no mesmo dia. Inclui ajustes, orientações e suporte ao longo do processo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Preciso ter exames para começar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não é obrigatório. Podemos iniciar apenas com a consulta, e caso necessário, eu solicito exames de forma estratégica para aprofundar a investigação e otimizar seus resultados."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Atende por convênio?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No momento, não trabalho com convênios. Porém, tenho formas especiais de atendimento para te ajudar a iniciar seu acompanhamento."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav id="navbar">
-    <div class="nav-logo">
-      <img src="./img/7715302e1fe6f8433b092a4ad29cd22cd592c8ccffeed73be338f0a362011b4d.webp" alt="Nutricionista Ana Fedel" />
+  <div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-busy="true">
+    <div class="page-loader__inner">
+      <span class="page-loader__spinner" aria-hidden="true"></span>
+      <span class="page-loader__text">Carregando…</span>
     </div>
-  </nav>
+  </div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-right">
-      <img src="./img/32677305-2782-4685-93DB-673A4011531C.PNG" alt="Ana Fedel" loading="lazy" />
-    </div>
-    <div class="hero-left reveal">
-      <span class="hero-eyebrow">Nutricionista · Saúde Feminina</span>
-      <h1 class="hero-title">
-        Nutrição com ciência,<br>
-        <em>escuta</em> e estratégia.
-      </h1>
-      <div class="hero-cta-block">
-        <p class="hero-subtitle">
-          Atendimento nutricional personalizado para mulheres que desejam emagrecer, melhorar sintomas e cuidar da saúde hormonal com clareza e acompanhamento.
-        </p>
-        <a href="https://www.anafedel.com/" class="btn-primary btn-hero"><span>Agende agora</span></a>
-      </div>
-    </div>
-  </section>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-  <!-- HOW IT WORKS -->
-  <section class="section section-alt">
-    <div class="section-center reveal">
-      <span class="section-label">O processo</span>
-      <h2 class="section-title">Como funciona o atendimentoooooo</h2>
-    </div>
-    <div class="how-grid">
-      <div class="how-card reveal">
-        <div class="how-card-num">01</div>
-        <h3>Investigação Profunda</h3>
-        <p>Analiso sua história, exames laboratoriais e sinais clínicos para entender seu ponto de partida real.</p>
-      </div>
-      <div class="how-card reveal">
-        <div class="how-card-num">02</div>
-        <h3>Plano Personalizado</h3>
-        <p>Nada de cardápios genéricos. O plano é construído de acordo com sua rotina, preferências e necessidades.</p>
-      </div>
-      <div class="how-card reveal">
-        <div class="how-card-num">03</div>
-        <h3>Acompanhamento Contínuo</h3>
-        <p>Você recebe suporte para ajustes, evolução e constância ao longo de todo o processo. Incluindo bioimpedância.</p>
-      </div>
-    </div>
-  </section>
+  <header>
+    <nav id="navbar" class="site-nav" aria-label="Navegação principal">
+      <a href="#inicio" class="nav-logo" aria-label="Ana Fedel Nutricionista — início">
+        <img src="./img/7715302e1fe6f8433b092a4ad29cd22cd592c8ccffeed73be338f0a362011b4d.webp" width="300" height="120" alt="" decoding="async" />
+      </a>
+    </nav>
+  </header>
 
-  <!-- FOR WHOM -->
-  <section class="section">
-    <span class="section-label reveal">Especialidades</span>
-    <h2 class="section-title reveal">Pra quem é o meu acompanhamento?</h2>
-    <div class="for-whom-grid">
-      <div class="for-whom-item reveal">
-        <h4>Saúde da Mulher e Equilíbrio Hormonal</h4>
-        <p>TPM, SOP, menopausa e sintomas hormonais.</p>
+  <main id="conteudo">
+    <!-- HERO -->
+    <section id="inicio" class="hero" aria-labelledby="hero-titulo">
+      <div class="hero-right">
+        <img src="./img/hero-ana-fedel-1600.jpg" width="1600" height="2133" alt="Retrato da nutricionista Ana Fedel" fetchpriority="high" decoding="async" />
       </div>
-      <div class="for-whom-item reveal">
-        <h4>Emagrecimento e Gestão Metabólica</h4>
-        <p>Perda de peso com estratégia, sem terrorismo nutricional.</p>
-      </div>
-      <div class="for-whom-item reveal">
-        <h4>Saúde Digestiva e Imunidade</h4>
-        <p>Inchaço, intestino irregular e desconfortos digestivos.</p>
-      </div>
-      <div class="for-whom-item reveal">
-        <h4>Longevidade e Vitalidade</h4>
-        <p>Preservação de massa muscular, energia e autonomia ao longo dos anos.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PLANS -->
-  <section class="section section-alt section-center">
-    <span class="section-label reveal">Investimento</span>
-    <h2 class="section-title reveal">Planos disponíveis</h2>
-    <p class="reveal" style="color:var(--text-mid);margin-top:-10px;margin-bottom:0">Escolha o nível do seu comprometimento</p>
-    <div class="plans-grid">
-      <div class="plan-card reveal">
-        <div class="plan-name">Plano Essencial</div>
-        <div class="plan-duration">1 Mês</div>
-        <ul>
-          <li>Avaliação completa (histórico, hábitos e bioimpedância)</li>
-          <li>Plano alimentar individualizado entregue em até 48h</li>
-          <li>Acesso ao aplicativo e materiais exclusivos</li>
-          <li>Retorno em até 30 dias</li>
-        </ul>
-        <a href="https://www.anafedel.com/" class="btn-outline">Agendar</a>
-      </div>
-      <div class="plan-card featured reveal">
-        <div class="plan-name">Plano Transformar</div>
-        <div class="plan-duration">3 Meses</div>
-        <ul>
-          <li>3 meses de acompanhamento completo</li>
-          <li>Consultas mensais com reavaliação e ajustes no plano</li>
-          <li>Suporte entre consultas via WhatsApp</li>
-          <li>Plano alimentar atualizado conforme evolução</li>
-          <li>Acesso ilimitado ao aplicativo e materiais exclusivos</li>
-        </ul>
-        <a href="https://www.anafedel.com/" class="btn-outline">Agendar</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="section">
-    <div class="about-grid">
-      <div class="about-img reveal">
-        <img src="./img/1c8d4e007966c43a9312758c3bba61648fd37d7444276cdf37217d74908445c0.webp" alt="Ana Fedel Nutricionista" loading="lazy" />
-        <div class="about-img-accent"></div>
-      </div>
-      <div class="about-text reveal">
-        <span class="section-label">A nutricionista</span>
-        <h2>Quem será a nutri a te acompanhar?</h2>
-        <p>
-          <strong>Sou Ana Fedel, nutricionista,</strong> e meu trabalho é olhar para você de forma completa: sua história, seus exames, seus sintomas, sua rotina e seus objetivos.
-        </p>
-        <p>
-          Aqui, a nutrição não é sobre restrição, culpa ou dietas prontas. É sobre entender o que o seu corpo está tentando comunicar e construir um plano possível, inteligente e sustentável.
-        </p>
-        <a href="https://www.anafedel.com/" class="btn-primary" style="margin-top:12px"><span>Agende sua consulta</span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- PHILOSOPHY -->
-  <section class="section section-alt">
-    <div class="philosophy-grid">
-      <div>
-        <div class="philosophy-item reveal">
-          <span class="section-label">Método</span>
-          <h3>Nutrição baseada em ciência e prática clínica.</h3>
-          <p>Meu atendimento é fundamentado em evidências, análise clínica e interpretação de exames laboratoriais. Cada estratégia é pensada com precisão para gerar resultados reais e sustentáveis.</p>
-        </div>
-        <div class="philosophy-item reveal">
-          <h3>Cuidar da saúde também pode ser leve.</h3>
-          <p>Sem culpa, sem extremos e sem rigidez. Aqui, você aprende a entender seu corpo e construir um caminho possível para sua rotina.</p>
+      <div class="hero-left reveal">
+        <p class="hero-eyebrow">Nutricionista · Saúde Feminina</p>
+        <h1 id="hero-titulo" class="hero-title">
+          Nutrição com ciência,<br>
+          <em>escuta</em> e estratégia.
+        </h1>
+        <div class="hero-cta-block">
+          <p class="hero-subtitle">
+            Atendimento nutricional personalizado para mulheres que desejam emagrecer, melhorar sintomas e cuidar da saúde hormonal com clareza e acompanhamento.
+          </p>
+          <a href="https://www.anafedel.com/" class="btn-primary btn-hero"><span>Agende agora</span></a>
         </div>
       </div>
-      <div class="philosophy-imgs reveal">
-        <img src="./img/332931e550b385151db470b188934384830fd4c666ea32d3613811e0c0b66c36.webp" alt="" loading="lazy" />
-        <img src="./img/5ce36895a4db94f3872a9e3bcc3b7bb875db22336a79b3413cfc20a83f5772f3.webp" alt="" loading="lazy" />
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA -->
-  <section class="cta-section">
-    <h2 class="reveal">Pronta para cuidar do seu corpo<br>com mais consciência?</h2>
-    <p class="reveal">Agende sua consulta e receba um acompanhamento pensado para você, sua rotina e seus objetivos.</p>
-    <a href="https://www.anafedel.com/" class="btn-light reveal"><span>Agende aqui</span></a>
-  </section>
+    <!-- HOW IT WORKS -->
+    <section id="processo" class="section section-alt" aria-labelledby="titulo-processo">
+      <div class="section-center reveal">
+        <span class="section-label">O processo</span>
+        <h2 id="titulo-processo" class="section-title">Como funciona o atendimento</h2>
+      </div>
+      <div class="how-grid">
+        <div class="how-card reveal">
+          <div class="how-card-num" aria-hidden="true">01</div>
+          <h3>Investigação profunda</h3>
+          <p>Analiso sua história, exames laboratoriais e sinais clínicos para entender seu ponto de partida real.</p>
+        </div>
+        <div class="how-card reveal">
+          <div class="how-card-num" aria-hidden="true">02</div>
+          <h3>Plano personalizado</h3>
+          <p>Nada de cardápios genéricos. O plano é construído de acordo com sua rotina, preferências e necessidades.</p>
+        </div>
+        <div class="how-card reveal">
+          <div class="how-card-num" aria-hidden="true">03</div>
+          <h3>Acompanhamento contínuo</h3>
+          <p>Você recebe suporte para ajustes, evolução e constância ao longo de todo o processo. Incluindo bioimpedância.</p>
+        </div>
+      </div>
+    </section>
 
-  <!-- FAQ -->
-  <section class="section">
-    <div class="section-center reveal">
-      <span class="section-label">Dúvidas</span>
-      <h2 class="section-title">Perguntas Frequentes</h2>
-    </div>
-    <div class="faq-grid">
-      <div class="faq-item reveal" onclick="toggleFaq(this)">
-        <div class="faq-question">
-          Como funciona a avaliação física?
-          <span class="faq-icon">+</span>
+    <!-- FOR WHOM -->
+    <section id="especialidades" class="section" aria-labelledby="titulo-especialidades">
+      <span class="section-label reveal">Especialidades</span>
+      <h2 id="titulo-especialidades" class="section-title reveal">Pra quem é o meu acompanhamento?</h2>
+      <div class="for-whom-grid">
+        <div class="for-whom-item reveal">
+          <h3 class="for-whom-heading">Saúde da mulher e equilíbrio hormonal</h3>
+          <p>TPM, SOP, menopausa e sintomas hormonais.</p>
         </div>
-        <div class="faq-answer">Presencial: bioimpedância, dobras cutâneas, medidas e fotos. Online: guia com instruções de medidas + envio de fotos e peso.</div>
-      </div>
-      <div class="faq-item reveal" onclick="toggleFaq(this)">
-        <div class="faq-question">
-          Como é o suporte?
-          <span class="faq-icon">+</span>
+        <div class="for-whom-item reveal">
+          <h3 class="for-whom-heading">Emagrecimento e gestão metabólica</h3>
+          <p>Perda de peso com estratégia, sem terrorismo nutricional.</p>
         </div>
-        <div class="faq-answer">Acompanhamento direto comigo via WhatsApp, com respostas no mesmo dia. Inclui ajustes, orientações e suporte ao longo do processo.</div>
-      </div>
-      <div class="faq-item reveal" onclick="toggleFaq(this)">
-        <div class="faq-question">
-          Preciso ter exames para começar?
-          <span class="faq-icon">+</span>
+        <div class="for-whom-item reveal">
+          <h3 class="for-whom-heading">Saúde digestiva e imunidade</h3>
+          <p>Inchaço, intestino irregular e desconfortos digestivos.</p>
         </div>
-        <div class="faq-answer">Não é obrigatório. Podemos iniciar apenas com a consulta, e caso necessário, eu solicito exames de forma estratégica para aprofundar a investigação e otimizar seus resultados.</div>
-      </div>
-      <div class="faq-item reveal" onclick="toggleFaq(this)">
-        <div class="faq-question">
-          Atende por convênio?
-          <span class="faq-icon">+</span>
+        <div class="for-whom-item reveal">
+          <h3 class="for-whom-heading">Longevidade e vitalidade</h3>
+          <p>Preservação de massa muscular, energia e autonomia ao longo dos anos.</p>
         </div>
-        <div class="faq-answer">No momento, não trabalho com convênios. Porém, tenho formas especiais de atendimento para te ajudar a iniciar seu acompanhamento.</div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- PLANS -->
+    <section id="planos" class="section section-alt section-center" aria-labelledby="titulo-planos">
+      <span class="section-label reveal">Investimento</span>
+      <h2 id="titulo-planos" class="section-title reveal">Planos disponíveis</h2>
+      <p class="plans-intro reveal">Escolha o nível do seu comprometimento</p>
+      <div class="plans-grid">
+        <div class="plan-card reveal">
+          <div class="plan-name">Plano Essencial</div>
+          <div class="plan-duration">1 Mês</div>
+          <ul>
+            <li>Avaliação completa (histórico, hábitos e bioimpedância)</li>
+            <li>Plano alimentar individualizado entregue em até 48h</li>
+            <li>Acesso ao aplicativo e materiais exclusivos</li>
+            <li>Retorno em até 30 dias</li>
+          </ul>
+          <a href="https://www.anafedel.com/" class="btn-outline">Agendar</a>
+        </div>
+        <div class="plan-card featured reveal">
+          <div class="plan-name">Plano Transformar</div>
+          <div class="plan-duration">3 Meses</div>
+          <ul>
+            <li>3 meses de acompanhamento completo</li>
+            <li>Consultas mensais com reavaliação e ajustes no plano</li>
+            <li>Suporte entre consultas via WhatsApp</li>
+            <li>Plano alimentar atualizado conforme evolução</li>
+            <li>Acesso ilimitado ao aplicativo e materiais exclusivos</li>
+          </ul>
+          <a href="https://www.anafedel.com/" class="btn-outline">Agendar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="sobre" class="section" aria-labelledby="titulo-sobre">
+      <div class="about-grid">
+        <div class="about-img reveal">
+          <img src="./img/1c8d4e007966c43a9312758c3bba61648fd37d7444276cdf37217d74908445c0.webp" alt="Ana Fedel em consultório, nutricionista" loading="lazy" decoding="async" />
+          <div class="about-img-accent" aria-hidden="true"></div>
+        </div>
+        <div class="about-text reveal">
+          <span class="section-label">A nutricionista</span>
+          <h2 id="titulo-sobre">Quem será a nutri a te acompanhar?</h2>
+          <p>
+            <strong>Sou Ana Fedel, nutricionista,</strong> e meu trabalho é olhar para você de forma completa: sua história, seus exames, seus sintomas, sua rotina e seus objetivos.
+          </p>
+          <p>
+            Aqui, a nutrição não é sobre restrição, culpa ou dietas prontas. É sobre entender o que o seu corpo está tentando comunicar e construir um plano possível, inteligente e sustentável.
+          </p>
+          <a href="https://www.anafedel.com/" class="btn-primary about-cta"><span>Agende sua consulta</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHILOSOPHY -->
+    <section id="metodo" class="section section-alt" aria-labelledby="titulo-metodo">
+      <div class="philosophy-grid">
+        <div>
+          <div class="philosophy-item reveal">
+            <span class="section-label">Método</span>
+            <h2 id="titulo-metodo" class="philosophy-title">Nutrição baseada em ciência e prática clínica.</h2>
+            <p>Meu atendimento é fundamentado em evidências, análise clínica e interpretação de exames laboratoriais. Cada estratégia é pensada com precisão para gerar resultados reais e sustentáveis.</p>
+          </div>
+          <div class="philosophy-item reveal">
+            <h3 class="philosophy-title">Cuidar da saúde também pode ser leve.</h3>
+            <p>Sem culpa, sem extremos e sem rigidez. Aqui, você aprende a entender seu corpo e construir um caminho possível para sua rotina.</p>
+          </div>
+        </div>
+        <div class="philosophy-imgs reveal">
+          <img src="./img/332931e550b385151db470b188934384830fd4c666ea32d3613811e0c0b66c36.webp" alt="Alimentação equilibrada e ingredientes frescos" loading="lazy" decoding="async" />
+          <img src="./img/5ce36895a4db94f3872a9e3bcc3b7bb875db22336a79b3413cfc20a83f5772f3.webp" alt="Hábitos saudáveis e bem-estar no dia a dia" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" aria-labelledby="titulo-cta">
+      <h2 id="titulo-cta" class="reveal">Pronta para cuidar do seu corpo<br>com mais consciência?</h2>
+      <p class="reveal">Agende sua consulta e receba um acompanhamento pensado para você, sua rotina e seus objetivos.</p>
+      <a href="https://www.anafedel.com/" class="btn-light reveal"><span>Agende aqui</span></a>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section" aria-labelledby="titulo-faq">
+      <div class="section-center reveal">
+        <span class="section-label">Dúvidas</span>
+        <h2 id="titulo-faq" class="section-title">Perguntas frequentes</h2>
+      </div>
+      <div class="faq-grid">
+        <details class="faq-item reveal">
+          <summary class="faq-question">
+            Como funciona a avaliação física?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-answer">Presencial: bioimpedância, dobras cutâneas, medidas e fotos. Online: guia com instruções de medidas + envio de fotos e peso.</div>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question">
+            Como é o suporte?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-answer">Acompanhamento direto comigo via WhatsApp, com respostas no mesmo dia. Inclui ajustes, orientações e suporte ao longo do processo.</div>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question">
+            Preciso ter exames para começar?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-answer">Não é obrigatório. Podemos iniciar apenas com a consulta, e caso necessário, eu solicito exames de forma estratégica para aprofundar a investigação e otimizar seus resultados.</div>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question">
+            Atende por convênio?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-answer">No momento, não trabalho com convênios. Porém, tenho formas especiais de atendimento para te ajudar a iniciar seu acompanhamento.</div>
+        </details>
+      </div>
+    </section>
+  </main>
 
   <!-- FOOTER -->
-  <footer>
+  <footer class="site-footer">
     <div>
-      <img src="./img/7715302e1fe6f8433b092a4ad29cd22cd592c8ccffeed73be338f0a362011b4d.webp" alt="Ana Fedel" />
+      <img src="./img/7715302e1fe6f8433b092a4ad29cd22cd592c8ccffeed73be338f0a362011b4d.webp" width="300" height="120" alt="" decoding="async" />
       <p>Atendimento online e a domicílio<br>Região de Campinas – SP</p>
     </div>
     <div class="footer-links">
-      <strong style="color:#fff;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px">Links</strong>
-      <a href="#">Início</a>
-      <a href="#">Planos</a>
-      <a href="#">Sobre</a>
-      <a href="#">Perguntas Frequentes</a>
+      <p class="footer-col-title">Links</p>
+      <a href="#inicio">Início</a>
+      <a href="#planos">Planos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#faq">Perguntas frequentes</a>
     </div>
     <div class="footer-social">
-      <strong style="color:#fff;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;display:block;margin-bottom:12px">Redes Sociais</strong>
-      <a href="https://www.instagram.com/nutrianafedel" target="_blank">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <p class="footer-col-title">Redes sociais</p>
+      <a href="https://www.instagram.com/nutrianafedel" target="_blank" rel="noopener noreferrer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
           <rect x="2" y="2" width="20" height="20" rx="5"/>
           <circle cx="12" cy="12" r="4"/>
           <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
         </svg>
-        @nutrianafedel
+        <span>@nutrianafedel</span>
       </a>
     </div>
   </footer>
   <div class="footer-bottom">© 2026 Ana Fedel Nutricionista · Todos os direitos reservados</div>
 
   <script>
-    // Scroll-driven nav shrink
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 60);
-    });
-
-    // Intersection observer for reveal animations
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          const siblings = [...e.target.parentElement.querySelectorAll('.reveal')];
-          const idx = siblings.indexOf(e.target);
-          setTimeout(() => e.target.classList.add('visible'), idx * 80);
-          observer.unobserve(e.target);
-        }
+    (function () {
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
       });
-    }, { threshold: 0.12 });
-    reveals.forEach(el => observer.observe(el));
 
-    // FAQ accordion
-    function toggleFaq(item) {
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
-    }
+      const loader = document.getElementById('page-loader');
+      const LOADER_MIN_MS = 480;
+
+      function waitForImages() {
+        return Promise.all(
+          [...document.querySelectorAll('img[src]')].map((img) => {
+            if (img.loading === 'lazy') return Promise.resolve();
+            if (img.complete && img.naturalHeight > 0) return Promise.resolve();
+            return new Promise((resolve) => {
+              img.addEventListener('load', resolve, { once: true });
+              img.addEventListener('error', resolve, { once: true });
+            });
+          })
+        );
+      }
+
+      function initRevealAnimations() {
+        const reveals = document.querySelectorAll('.reveal');
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (!e.isIntersecting) return;
+              const siblings = [...e.target.parentElement.querySelectorAll('.reveal')];
+              const idx = siblings.indexOf(e.target);
+              const delay = reduceMotion ? 0 : idx * 80;
+              setTimeout(() => e.target.classList.add('visible'), delay);
+              observer.unobserve(e.target);
+            });
+          },
+          { threshold: 0.12 }
+        );
+        reveals.forEach((el) => observer.observe(el));
+      }
+
+      document.body.classList.add('is-page-loading');
+
+      const t0 = performance.now();
+      const safetyMs = 8000;
+      const safety = new Promise((r) => setTimeout(r, safetyMs));
+      Promise.race([
+        Promise.all([document.fonts.ready.catch(() => {}), waitForImages()]),
+        safety
+      ])
+        .then(() => {
+          const elapsed = performance.now() - t0;
+          const rest = Math.max(0, LOADER_MIN_MS - elapsed);
+          return new Promise((r) => setTimeout(r, rest));
+        })
+        .then(() => {
+          loader.classList.add('is-hidden');
+          loader.setAttribute('aria-busy', 'false');
+          loader.setAttribute('aria-hidden', 'true');
+          document.body.classList.remove('is-page-loading');
+          initRevealAnimations();
+        });
+    })();
   </script>
 
 </body>
