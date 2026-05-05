@@ -8,415 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    
-    :root {
-      --cream: #faf8f5;
-      --warm-white: #fffdf9;
-      --sage: #b8c4aa;
-      --sage-dark: #8fa07e;
-      --taupe: #c4b5a4;
-      --brown: #6b5744;
-      --text-dark: #2c2319;
-      --text-mid: #5a4a3b;
-      --text-light: #9b8b7c;
-      --accent: #d4956a;
-      --accent-light: #e8c4a8;
-      --border: #e8e0d5;
-      --section-alt: #f4f0ea;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Jost', sans-serif;
-      background: var(--cream);
-      color: var(--text-dark);
-      font-weight: 300;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    /* ─── NAV ─── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      padding: 20px 48px;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(250,248,245,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      transition: all 0.4s ease;
-    }
-    nav.scrolled { padding: 14px 48px; }
-    .nav-logo img {
-      height: 64px;
-      transition: height 0.4s ease;
-    }
-    nav.scrolled .nav-logo img { height: 48px; }
-
-    /* ─── HERO ─── */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding-top: 110px;
-      overflow: hidden;
-    }
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 80px 60px 80px 80px;
-      position: relative;
-    }
-    .hero-left::before {
-      content: '';
-      position: absolute; top: 20%; right: 0;
-      width: 1px; height: 60%;
-      background: linear-gradient(to bottom, transparent, var(--border), transparent);
-    }
-    .hero-eyebrow {
-      font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--accent); font-weight: 500; margin-bottom: 28px;
-    }
-    .hero-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 4vw, 3.8rem);
-      font-weight: 400;
-      line-height: 1.2;
-      color: var(--text-dark);
-      margin-bottom: 28px;
-    }
-    .hero-title em { font-style: italic; color: var(--brown); }
-    .hero-subtitle {
-      font-size: 1rem; color: var(--text-mid);
-      max-width: 440px; margin-bottom: 44px; line-height: 1.8;
-    }
-    .btn-primary {
-      display: inline-block;
-      background: var(--brown);
-      color: #fff;
-      padding: 15px 36px;
-      font-family: 'Jost', sans-serif;
-      font-size: 12px; font-weight: 500;
-      letter-spacing: 0.15em; text-transform: uppercase;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      position: relative; overflow: hidden;
-    }
-    .btn-primary::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: var(--accent);
-      transform: translateX(-100%);
-      transition: transform 0.4s ease;
-    }
-    .btn-primary:hover::after { transform: translateX(0); }
-    .btn-primary span { position: relative; z-index: 1; }
-
-    .hero-right {
-      position: relative;
-      background: var(--section-alt);
-      overflow: hidden;
-    }
-    .hero-right img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: top center;
-    }
-    .hero-img-overlay {
-      position: absolute; bottom: 40px; left: -30px;
-      width: 140px; border: 4px solid var(--cream);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-    }
-
-    /* ─── FADE-IN ANIMATIONS ─── */
-    .reveal {
-      opacity: 0; transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    /* ─── SECTION WRAPPER ─── */
-    .section { padding: 100px 80px; }
-    .section-alt { background: var(--section-alt); }
-    .section-dark { background: var(--brown); color: #fff; }
-    .section-center { text-align: center; }
-
-    .section-label {
-      font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
-      color: var(--accent); font-weight: 500; margin-bottom: 16px;
-      display: block;
-    }
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3vw, 2.8rem);
-      font-weight: 400; line-height: 1.25;
-      color: var(--text-dark); margin-bottom: 20px;
-    }
-    .section-alt .section-title,
-    .section-dark .section-title { color: inherit; }
-
-    /* ─── HOW IT WORKS ─── */
-    .how-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 48px;
-      margin-top: 64px;
-    }
-    .how-card {
-      padding: 40px 32px;
-      background: var(--warm-white);
-      border: 1px solid var(--border);
-      position: relative;
-    }
-    .how-card-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 5rem; font-weight: 300;
-      color: var(--accent-light);
-      line-height: 1;
-      margin-bottom: 20px;
-    }
-    .how-card h3 {
-      font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
-      font-weight: 600; color: var(--brown); margin-bottom: 14px;
-    }
-    .how-card p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.8; }
-
-    /* ─── FOR WHOM ─── */
-    .for-whom-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      margin-top: 60px;
-    }
-    .for-whom-item {
-      padding: 36px 40px;
-      border: 1px solid var(--border);
-      position: relative;
-      transition: background 0.3s ease;
-    }
-    .for-whom-item:hover { background: var(--warm-white); }
-    .for-whom-item h4 {
-      font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
-      font-weight: 600; color: var(--accent); margin-bottom: 10px;
-    }
-    .for-whom-item p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
-
-    /* ─── PLANS ─── */
-    .plans-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      margin-top: 60px;
-      max-width: 900px; margin-left: auto; margin-right: auto;
-    }
-    .plan-card {
-      padding: 48px 40px;
-      border: 1px solid var(--border);
-      background: var(--warm-white);
-      position: relative;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .plan-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 30px 80px rgba(107,87,68,0.1);
-    }
-    .plan-card.featured {
-      background: var(--brown); color: #fff; border-color: var(--brown);
-    }
-    .plan-card.featured .plan-duration,
-    .plan-card.featured li { color: rgba(255,255,255,0.75); }
-    .plan-name {
-      font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
-      font-weight: 600; color: var(--accent); margin-bottom: 8px;
-    }
-    .plan-card.featured .plan-name { color: var(--accent-light); }
-    .plan-duration {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem; font-weight: 400; color: var(--text-dark); margin-bottom: 28px;
-    }
-    .plan-card.featured .plan-duration { color: #fff; }
-    .plan-card ul { list-style: none; margin-bottom: 36px; }
-    .plan-card li {
-      font-size: 0.88rem; color: var(--text-mid);
-      padding: 10px 0; border-bottom: 1px solid var(--border);
-      display: flex; align-items: flex-start; gap: 10px;
-    }
-    .plan-card.featured li { border-color: rgba(255,255,255,0.15); }
-    .plan-card li::before {
-      content: '→'; color: var(--accent); flex-shrink: 0; margin-top: 1px;
-    }
-    .btn-outline {
-      display: inline-block;
-      border: 1px solid currentColor;
-      color: var(--brown);
-      padding: 12px 28px;
-      font-family: 'Jost', sans-serif;
-      font-size: 11px; font-weight: 500;
-      letter-spacing: 0.15em; text-transform: uppercase;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    .btn-outline:hover { background: var(--brown); color: #fff; border-color: var(--brown); }
-    .plan-card.featured .btn-outline {
-      color: #fff; border-color: rgba(255,255,255,0.5);
-    }
-    .plan-card.featured .btn-outline:hover { background: #fff; color: var(--brown); }
-
-    /* ─── ABOUT ─── */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-    .about-img { position: relative; }
-    .about-img img {
-      width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top;
-    }
-    .about-img-accent {
-      position: absolute; bottom: -24px; right: -24px;
-      width: 120px; height: 120px;
-      background: var(--accent); opacity: 0.15;
-    }
-    .about-text h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.8rem, 2.5vw, 2.4rem);
-      font-weight: 400; line-height: 1.3;
-      margin-bottom: 24px;
-    }
-    .about-text p { font-size: 0.95rem; color: var(--text-mid); margin-bottom: 20px; line-height: 1.85; }
-
-    /* ─── PHILOSOPHY ─── */
-    .philosophy-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-    .philosophy-item { padding: 48px 0; border-top: 1px solid var(--border); }
-    .philosophy-item:first-child { border-top: none; }
-    .philosophy-item h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.7rem; font-weight: 400;
-      margin-bottom: 14px; color: var(--text-dark);
-    }
-    .philosophy-item p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.8; }
-    .philosophy-imgs { display: flex; flex-direction: column; gap: 20px; }
-    .philosophy-imgs img { width: 100%; object-fit: cover; }
-
-    /* ─── CTA ─── */
-    .cta-section {
-      padding: 120px 80px;
-      background: linear-gradient(135deg, var(--brown) 0%, #4a3526 100%);
-      text-align: center;
-      position: relative; overflow: hidden;
-    }
-    .cta-section::before {
-      content: '';
-      position: absolute; top: -50%; left: -10%;
-      width: 60%; height: 200%;
-      background: rgba(255,255,255,0.03);
-      transform: rotate(-15deg);
-    }
-    .cta-section h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 400; color: #fff;
-      margin-bottom: 16px; line-height: 1.2;
-    }
-    .cta-section p { color: rgba(255,255,255,0.7); margin-bottom: 44px; font-size: 1rem; max-width: 560px; margin-left: auto; margin-right: auto; margin-bottom: 44px; }
-    .btn-light {
-      display: inline-block;
-      background: #fff;
-      color: var(--brown);
-      padding: 16px 40px;
-      font-family: 'Jost', sans-serif;
-      font-size: 12px; font-weight: 600;
-      letter-spacing: 0.15em; text-transform: uppercase;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    .btn-light:hover { background: var(--accent-light); }
-
-    /* ─── FAQ ─── */
-    .faq-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      margin-top: 60px;
-    }
-    .faq-item {
-      padding: 32px 36px;
-      border: 1px solid var(--border);
-      cursor: pointer;
-    }
-    .faq-item:hover { background: var(--warm-white); }
-    .faq-question {
-      font-size: 0.95rem; font-weight: 500;
-      color: var(--text-dark); margin-bottom: 0;
-      display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;
-    }
-    .faq-icon { flex-shrink: 0; font-size: 1.2rem; color: var(--accent); transition: transform 0.3s ease; }
-    .faq-answer {
-      font-size: 0.88rem; color: var(--text-mid);
-      line-height: 1.8; max-height: 0; overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.3s ease;
-    }
-    .faq-item.open .faq-answer { max-height: 200px; padding-top: 14px; }
-    .faq-item.open .faq-icon { transform: rotate(45deg); }
-
-    /* ─── FOOTER ─── */
-    footer {
-      background: var(--text-dark);
-      color: rgba(255,255,255,0.6);
-      padding: 60px 80px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 48px;
-      align-items: start;
-    }
-    footer img { height: 50px; filter: brightness(0) invert(1); opacity: 0.8; margin-bottom: 16px; }
-    footer p { font-size: 0.85rem; line-height: 1.8; }
-    .footer-links { display: flex; flex-direction: column; gap: 10px; }
-    .footer-links a {
-      color: rgba(255,255,255,0.5); text-decoration: none;
-      font-size: 0.85rem; transition: color 0.2s;
-    }
-    .footer-links a:hover { color: #fff; }
-    .footer-social a {
-      display: inline-flex; align-items: center; gap: 10px;
-      color: rgba(255,255,255,0.6); text-decoration: none;
-      font-size: 0.85rem; transition: color 0.2s;
-    }
-    .footer-social a:hover { color: var(--accent-light); }
-    .footer-bottom {
-      background: #1a110a;
-      text-align: center; padding: 20px 80px;
-      font-size: 0.78rem; color: rgba(255,255,255,0.3);
-    }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 900px) {
-      nav { padding: 16px 24px; }
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-right { height: 60vw; }
-      .hero-left { padding: 80px 24px 60px; }
-      .section { padding: 70px 24px; }
-      .how-grid,
-      .for-whom-grid,
-      .plans-grid,
-      .about-grid,
-      .philosophy-grid,
-      .faq-grid { grid-template-columns: 1fr; }
-      footer { grid-template-columns: 1fr; padding: 50px 24px; }
-      .footer-bottom { padding: 20px 24px; }
-      .cta-section { padding: 80px 24px; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
@@ -621,7 +213,7 @@
     </div>
     <div class="footer-links">
       <strong style="color:#fff;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px">Links</strong>
-      <a href="#" >Início</a>
+      <a href="#">Início</a>
       <a href="#">Planos</a>
       <a href="#">Sobre</a>
       <a href="#">Perguntas Frequentes</a>
@@ -629,7 +221,11 @@
     <div class="footer-social">
       <strong style="color:#fff;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;display:block;margin-bottom:12px">Redes Sociais</strong>
       <a href="https://www.instagram.com/nutrianafedel" target="_blank">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+        </svg>
         @nutrianafedel
       </a>
     </div>
@@ -646,14 +242,11 @@
     // Intersection observer for reveal animations
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver(entries => {
-      entries.forEach((e, i) => {
+      entries.forEach(e => {
         if (e.isIntersecting) {
-          // Stagger siblings
           const siblings = [...e.target.parentElement.querySelectorAll('.reveal')];
           const idx = siblings.indexOf(e.target);
-          setTimeout(() => {
-            e.target.classList.add('visible');
-          }, idx * 80);
+          setTimeout(() => e.target.classList.add('visible'), idx * 80);
           observer.unobserve(e.target);
         }
       });
@@ -667,5 +260,6 @@
       if (!isOpen) item.classList.add('open');
     }
   </script>
+
 </body>
 </html>
