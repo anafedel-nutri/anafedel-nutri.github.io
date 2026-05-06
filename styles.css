@@ -511,7 +511,7 @@ body.is-page-loading {
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   position: relative;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, opacity 0.7s ease, transform 0.7s ease;
 }
 
 .for-whom-item:hover {
