@@ -627,7 +627,7 @@ body.is-page-loading {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
-  align-items: center;
+  align-items: start;
 }
 
 .about-img {
@@ -671,7 +671,7 @@ body.is-page-loading {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  align-items: center;
+  align-items: start;
 }
 
 .philosophy-item {
@@ -681,6 +681,8 @@ body.is-page-loading {
 
 .philosophy-item:first-child {
   border-top: none;
+  padding-top: 0;
+  padding-bottom: 28px;
 }
 
 .philosophy-title {
