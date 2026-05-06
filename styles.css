@@ -176,14 +176,14 @@ body.is-page-loading {
 /* ─── HERO ─── */
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.55fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: start;
   padding-top: 0;
   padding-bottom: 88px;
   overflow-x: hidden;
-  /* 25% de espaço horizontal total (12,5% cada lado) — conteúdo mais centralizado */
-  margin-left: 12.5%;
-  margin-right: 12.5%;
+  width: min(100%, 1280px);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-left {
@@ -497,8 +497,12 @@ body.is-page-loading {
 .for-whom-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0;
+  gap: 16px;
   margin-top: 48px;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: start;
 }
 
 .for-whom-item {
@@ -545,6 +549,8 @@ body.is-page-loading {
   background: var(--warm-white);
   border-radius: var(--radius-md);
   position: relative;
+  display: flex;
+  flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -591,6 +597,7 @@ body.is-page-loading {
 
 .plan-card ul {
   list-style: none;
+  flex: 1;
   margin-bottom: 36px;
 }
 
@@ -623,6 +630,10 @@ body.is-page-loading {
 .plan-card.featured .btn-outline:hover {
   background: #fff;
   color: var(--brown);
+}
+
+.plan-card .btn-outline {
+  margin-top: auto;
 }
 
 /* ─── ABOUT ─── */
@@ -763,6 +774,9 @@ body.is-page-loading {
   grid-template-columns: 1fr 1fr;
   gap: 14px;
   margin-top: 48px;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .faq-item {
@@ -810,7 +824,7 @@ body.is-page-loading {
   font-size: 0.88rem;
   color: var(--text-mid);
   line-height: 1.8;
-  padding: 0 36px 28px;
+  padding: 14px 36px 28px;
   border-top: 1px solid var(--border);
   max-height: none;
   overflow: visible;
@@ -872,16 +886,28 @@ body.is-page-loading {
   font-weight: 600;
 }
 
+.footer-links .footer-col-title,
+.footer-social .footer-col-title {
+  font-size: 14px;
+}
+
 .footer-links {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
 .footer-links a {
   color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 1rem;
   transition: color 0.2s;
 }
 
@@ -895,7 +921,7 @@ body.is-page-loading {
   gap: 10px;
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 1rem;
   transition: color 0.2s;
 }
 
@@ -922,6 +948,7 @@ body.is-page-loading {
     min-height: auto;
     margin-left: 0;
     margin-right: 0;
+    width: 100%;
   }
 
   .hero-right {
@@ -930,6 +957,10 @@ body.is-page-loading {
 
   .hero-left {
     padding: 28px 24px 60px;
+  }
+
+  .hero-eyebrow {
+    text-align: center;
   }
 
   .hero-left::before {
@@ -947,6 +978,20 @@ body.is-page-loading {
   .philosophy-grid,
   .faq-grid {
     grid-template-columns: 1fr;
+  }
+
+  .for-whom-grid {
+    gap: 12px;
+  }
+
+  .about-cta {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0;
+    padding: 10px 22px;
+    font-size: 10.5px;
+    letter-spacing: 0.11em;
+    border-radius: 8px;
   }
 
   .site-footer {
@@ -967,7 +1012,7 @@ body.is-page-loading {
   }
 
   .faq-answer {
-    padding: 0 20px 24px;
+    padding: 12px 20px 24px;
   }
 }
 
