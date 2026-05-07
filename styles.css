@@ -254,6 +254,13 @@ body.is-page-loading {
   background: var(--section-alt);
 }
 
+@media (min-width: 901px) {
+  .hero-right {
+    width: min(100%, 560px);
+    margin-left: auto;
+  }
+}
+
 /* Foto principal: escala só pela largura, sem cortar topo/fundo */
 .hero-right > img:not(.hero-img-overlay) {
   width: 100%;
@@ -542,6 +549,14 @@ body.is-page-loading {
 
 #processo.section {
   padding-top: 56px;
+}
+
+@media (min-width: 1200px) {
+  #processo.section {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .section-alt {
