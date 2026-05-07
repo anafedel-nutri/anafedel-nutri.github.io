@@ -1017,6 +1017,32 @@ body.is-page-loading {
   line-height: 1.8;
 }
 
+.footer-info-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-info-icon--online {
+  width: 18px;
+  height: 18px;
+  padding: 2px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d4956a 0%, #e8c4a8 100%);
+  color: #1f160f;
+  box-shadow: 0 5px 12px rgba(212, 149, 106, 0.3);
+}
+
+.footer-info-icon--location {
+  width: 18px;
+  height: 18px;
+  padding: 2px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8fa07e 0%, #b8c4aa 100%);
+  color: #16210f;
+  box-shadow: 0 5px 12px rgba(143, 160, 126, 0.28);
+}
+
 .footer-col-title {
   color: #fff;
   font-size: 10px;
