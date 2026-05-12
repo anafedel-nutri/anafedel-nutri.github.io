@@ -486,8 +486,7 @@
         reveals.forEach((el) => observer.observe(el));
       }
 
-      const GCAL_SCHEDULE_URL =
-        'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3-HAUCw_YPbPsieuuFXQylLrMYv_SoqQChqPpZh21VNl5yqeEvb2kfE1ZKOsIa0m-bSG_uuSFC?gv=true';
+      const GCAL_SCHEDULE_URL = "https://calendar.google.com/calendar/appointments/AcZssZ0dGAXsBGvjWRiKiPCUCTKC4DncZaVeOFMWxT0=?gv=true";
 
       function initGoogleSchedulingButtons() {
         if (!window.calendar || !calendar.schedulingButton) return false;
@@ -500,7 +499,7 @@
           host.appendChild(marker);
           calendar.schedulingButton.load({
             url: GCAL_SCHEDULE_URL,
-            color: '#d4956a',
+            color: '#039BE5',
             label: host.getAttribute('data-gcal-label') || 'Agendar',
             target: marker,
           });
