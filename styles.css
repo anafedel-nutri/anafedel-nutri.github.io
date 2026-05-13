@@ -1168,6 +1168,14 @@ body.is-page-loading {
     padding: 16px 24px;
   }
 
+  .nav-logo img {
+    height: 48px;
+  }
+
+  .site-nav.scrolled .nav-logo img {
+    height: 36px;
+  }
+
   .hero {
     grid-template-columns: 1fr;
     min-height: auto;
