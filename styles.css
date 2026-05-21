@@ -839,7 +839,7 @@ body.is-page-loading {
 .philosophy-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: 28px;
   align-items: start;
 }
 
@@ -877,12 +877,19 @@ body.is-page-loading {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: min(100%, 480px);
+  justify-self: center;
+  align-self: start;
+  margin-inline: auto;
 }
 
 .philosophy-imgs img {
   width: 100%;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
+  object-position: center;
   border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
 }
 
 /* ─── CTA ─── */
@@ -1215,6 +1222,14 @@ body.is-page-loading {
 
   .for-whom-grid {
     gap: 12px;
+  }
+
+  .philosophy-imgs {
+    width: 100%;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-self: center;
   }
 
   .about-text .gcal-schedule-host.about-cta {
