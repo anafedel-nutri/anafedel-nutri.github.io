@@ -816,6 +816,10 @@ body.is-page-loading {
   margin-top: 1px;
 }
 
+.plan-card.featured li::before {
+  color: var(--nude);
+}
+
 .plan-card.featured .btn-outline {
   color: #fff;
   border-color: rgba(255, 255, 255, 0.5);
