@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#6b5744" />
+  <meta name="theme-color" content="#6E3B46" />
   <meta name="color-scheme" content="light" />
   <title>Ana Fedel | Nutricionista — Saúde da mulher e emagrecimento em Campinas</title>
   <meta name="description" content="Consultoria com Ana Fedel, nutricionista em Campinas (SP): emagrecimento sustentável, saúde hormonal (TPM, SOP, menopausa), exames e acompanhamento online ou presencial. Agende sua consulta." />
@@ -82,6 +82,26 @@
         align-self: stretch !important;
         flex-shrink: 0 !important;
       }
+    }
+    /* Agendamento — campos e botões alinhados à paleta do site */
+    .hur54b input,
+    .hur54b select,
+    .hur54b textarea {
+      background: #FFFFFF !important;
+      border-color: #D9C7BE !important;
+      color: #2E2524 !important;
+    }
+    .hur54b button[type="submit"],
+    .hur54b .U26fgb,
+    .hur54b [role="button"].U26fgb {
+      background: #6E3B46 !important;
+      border-color: #6E3B46 !important;
+      color: #FFFFFF !important;
+    }
+    .hur54b button[type="submit"]:hover,
+    .hur54b .U26fgb:hover {
+      background: #5A2F38 !important;
+      border-color: #5A2F38 !important;
     }
   </style>
   <link rel="preload" as="image" href="./img/hero-ana-fedel-1600.jpg" fetchpriority="high" />
@@ -499,7 +519,7 @@
           host.appendChild(marker);
           calendar.schedulingButton.load({
             url: GCAL_SCHEDULE_URL,
-            color: '#039BE5',
+            color: '#6E3B46',
             label: host.getAttribute('data-gcal-label') || 'Agendar',
             target: marker,
           });
