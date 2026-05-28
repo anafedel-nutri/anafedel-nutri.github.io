@@ -57,7 +57,7 @@
     const menu = document.getElementById('nav-menu');
     if (!toggle || !menu) return;
 
-    const mq = window.matchMedia('(min-width: 901px)');
+    const mq = window.matchMedia('(min-width: 768px)');
 
     function closeMenu() {
       menu.classList.remove('is-open');
@@ -98,9 +98,42 @@
 
   const GCAL_SCHEDULE_URL =
     'https://calendar.google.com/calendar/appointments/AcZssZ0dGAXsBGvjWRiKiPCUCTKC4DncZaVeOFMWxT0=?gv=true';
+  const GCAL_SCRIPT_URL = 'https://calendar.google.com/calendar/scheduling-button-script.js';
+  const GCAL_STYLE_URL = 'https://calendar.google.com/calendar/scheduling-button-script.css';
+
+  function loadGoogleCalendarScheduling() {
+    if (!document.querySelector('.gcal-schedule-host')) {
+      return Promise.resolve();
+    }
+    if (window.__gcalLoadPromise) return window.__gcalLoadPromise;
+
+    window.__gcalLoadPromise = new Promise((resolve, reject) => {
+      if (!document.querySelector('link[data-gcal-css]')) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = GCAL_STYLE_URL;
+        link.setAttribute('data-gcal-css', '1');
+        document.head.appendChild(link);
+      }
+
+      if (window.calendar && window.calendar.schedulingButton) {
+        resolve();
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.src = GCAL_SCRIPT_URL;
+      script.async = true;
+      script.onload = () => resolve();
+      script.onerror = () => reject(new Error('Google Calendar script failed to load'));
+      document.head.appendChild(script);
+    });
+
+    return window.__gcalLoadPromise;
+  }
 
   function initGoogleSchedulingButtons() {
-    if (!window.calendar || !calendar.schedulingButton) return false;
+    if (!window.calendar || !window.calendar.schedulingButton) return false;
     document.querySelectorAll('.gcal-schedule-host').forEach((host) => {
       if (host.dataset.gcalInitialized) return;
       host.dataset.gcalInitialized = '1';
@@ -119,11 +152,17 @@
   }
 
   function ensureGoogleSchedulingButtons() {
-    if (initGoogleSchedulingButtons()) return;
-    let n = 0;
-    const id = setInterval(() => {
-      if (initGoogleSchedulingButtons() || ++n > 100) clearInterval(id);
-    }, 50);
+    if (!document.querySelector('.gcal-schedule-host')) return;
+
+    loadGoogleCalendarScheduling()
+      .then(() => {
+        if (initGoogleSchedulingButtons()) return;
+        let n = 0;
+        const id = setInterval(() => {
+          if (initGoogleSchedulingButtons() || ++n > 100) clearInterval(id);
+        }, 50);
+      })
+      .catch(() => {});
   }
 
   function onPageReady() {

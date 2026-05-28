@@ -547,7 +547,7 @@ body.is-page-loading {
   background: var(--section-alt);
 }
 
-@media (min-width: 901px) {
+@media (min-width: 768px) {
   .hero-right {
     width: min(100%, 560px);
     margin-left: auto;
@@ -1731,7 +1731,7 @@ body.is-page-loading {
 }
 
 /* ─── RESPONSIVE ─── */
-@media (max-width: 900px) {
+@media (max-width: 767px) {
   .site-nav {
     padding: 16px 24px;
     justify-content: space-between;
@@ -1789,6 +1789,11 @@ body.is-page-loading {
   .nav-menu__inner a {
     font-size: 13px;
     letter-spacing: 0.18em;
+    min-height: var(--touch-min);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
   }
 
   .nav-menu__cta {
@@ -1826,9 +1831,30 @@ body.is-page-loading {
     padding: 28px 24px;
   }
 
+  .hero-cta-block {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .hero-cta-actions {
+    width: 100%;
+  }
+
+  .gcal-schedule-host--primary.gcal-schedule-host--hero {
+    width: 100%;
+    max-width: 100%;
+    align-self: stretch;
+  }
+
+  .gcal-schedule-host--primary.gcal-schedule-host--hero .qxCTlb {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
   .hero-cta-actions .btn-outline.hero-whatsapp-btn {
     width: 100%;
     text-align: center;
+    justify-content: center;
   }
 
   .hero {
@@ -1926,10 +1952,10 @@ body.is-page-loading {
   #metodo .philosophy-imgs {
     position: relative;
     order: -1;
-    width: 100vw;
-    max-width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
     height: min(52vw, 320px);
     margin-bottom: 0;
   }
@@ -1988,6 +2014,32 @@ body.is-page-loading {
   .faq-answer {
     padding: 12px 20px 24px;
   }
+
+  .footer-info-line {
+    align-items: flex-start;
+    max-width: 100%;
+  }
+
+  .footer-info-line a {
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .seo-cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .seo-cta-actions .gcal-schedule-host,
+  .seo-cta-actions .btn-outline {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .seo-cta-actions .gcal-schedule-host .qxCTlb {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
 }
 
 /* SEO & links pages */
@@ -1998,7 +2050,7 @@ body.is-page-loading {
   gap: 30px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 767px) {
   .seo-page .site-nav,
   .links-page .site-nav {
     padding: 16px 24px;
