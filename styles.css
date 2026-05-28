@@ -149,7 +149,11 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
 }
 
-body > header,
+body > header {
+  position: relative;
+  z-index: var(--z-sticky);
+}
+
 body > main,
 body > footer,
 body > .whatsapp-float,
@@ -1920,10 +1924,16 @@ body.is-page-loading {
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 767px) {
+  :root {
+    --nav-bar-height: calc(env(safe-area-inset-top, 0px) + 72px);
+  }
+
   .site-nav {
     padding: 16px 24px;
     justify-content: space-between;
     gap: 12px;
+    position: relative;
+    z-index: 2;
   }
 
   .nav-logo img {
@@ -1934,19 +1944,33 @@ body.is-page-loading {
     height: 36px;
   }
 
+  body > header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-overlay);
+    background: rgba(250, 247, 244, 0.96);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 1px 0 var(--border);
+  }
+
   .nav-toggle {
     display: inline-flex;
     margin-left: auto;
+    position: relative;
+    z-index: 2;
   }
 
   .nav-menu {
     display: none;
     position: fixed;
-    inset: 0;
-    z-index: var(--z-overlay);
+    top: var(--nav-bar-height, 72px);
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
     align-items: stretch;
     justify-content: center;
-    padding: calc(env(safe-area-inset-top, 0px) + 88px) 24px 32px;
+    padding: 24px 24px 32px;
     background: rgba(250, 247, 244, 0.98);
     backdrop-filter: blur(12px);
   }
@@ -2189,27 +2213,6 @@ body.is-page-loading {
 
   .footer-bottom {
     padding: 20px 24px;
-  }
-
-  .whatsapp-float {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: var(--touch-min);
-    min-width: var(--touch-min);
-    position: fixed;
-    right: var(--space-3);
-    bottom: max(var(--space-3), env(safe-area-inset-bottom, 16px));
-    z-index: var(--z-modal);
-    background: #25d366;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 999px;
-    padding: 11px 14px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    box-shadow: 0 8px 18px rgba(37, 211, 102, 0.35);
   }
 
   .cta-section {
