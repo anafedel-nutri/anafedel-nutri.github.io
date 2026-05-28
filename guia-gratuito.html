@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <script src="analytics.js" async></script>
+  <meta name="theme-color" content="#6E3B46" />
+  <title>Guia gratuito | Ana Fedel Nutricionista</title>
+  <meta name="description" content="Baixe o guia gratuito de circunferências corporais. Informe seu e-mail para acessar o material." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://www.anafedel.com/guia-gratuito.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="links-page guia-page">
+
+  <header>
+    <nav id="navbar" class="site-nav scrolled" aria-label="Navegação principal">
+      <a href="index.html" class="nav-logo" aria-label="Ana Fedel Nutricionista — início">
+        <img src="./img/logo.svg" alt="" width="120" height="40" decoding="async" aria-hidden="true" />
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu">
+        <span class="nav-toggle__lines" aria-hidden="true"></span>
+      </button>
+      <div id="nav-menu" class="nav-menu">
+        <div class="nav-menu__inner">
+          <a href="index.html#planos">Planos</a>
+          <a href="index.html#metodo">Método</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="links.html">Links</a>
+          <a class="nav-menu__cta" href="index.html#planos">Ver planos e valores</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <header class="links-header">
+      <a href="index.html" aria-label="Ana Fedel Nutricionista — início">
+        <img src="./img/logo-s.svg" alt="Ana Fedel Nutricionista" width="72" height="72" decoding="async" />
+      </a>
+      <h1>Guia gratuito</h1>
+      <p>Material de apoio para medidas de circunferências corporais</p>
+    </header>
+
+    <section class="guia-gate" id="guia-gate" aria-labelledby="guia-gate-title">
+      <h2 id="guia-gate-title" class="guia-gate__title">Acesse com seu e-mail</h2>
+      <p class="guia-gate__intro">Informe seu e-mail para liberar o download dos guias em PDF.</p>
+      <form id="guia-email-form" class="guia-form" novalidate>
+        <label class="guia-form__label" for="guia-email">E-mail</label>
+        <input
+          class="guia-form__input"
+          type="email"
+          id="guia-email"
+          name="email"
+          autocomplete="email"
+          inputmode="email"
+          required
+          placeholder="seu@email.com"
+        />
+        <p class="guia-form__error" id="guia-form-error" role="alert" hidden></p>
+        <button class="guia-form__submit" type="submit">Acessar guias</button>
+      </form>
+      <p class="guia-gate__privacy">
+        Ao continuar, você concorda em receber o material e comunicações da Ana Fedel. Seus dados não são compartilhados com terceiros.
+      </p>
+    </section>
+
+    <section class="guia-downloads" id="guia-downloads" hidden aria-labelledby="guia-downloads-title">
+      <h2 id="guia-downloads-title" class="guia-downloads__title">Seus guias estão prontos</h2>
+      <p class="guia-downloads__welcome">
+        Material liberado para <strong id="guia-email-display"></strong>
+      </p>
+      <nav class="links-stack guia-download-list" aria-label="Downloads do guia">
+        <a href="guias/circunferencias-corporais-mulheres.pdf" download>
+          Guia de circunferências — Mulheres (PDF)
+        </a>
+        <a href="guias/circunferencias-corporais-homens.pdf" download class="links-outline">
+          Guia de circunferências — Homens (PDF)
+        </a>
+        <a href="links.html" class="links-outline">Voltar aos links</a>
+      </nav>
+      <button type="button" class="guia-logout" id="guia-logout">Usar outro e-mail</button>
+    </section>
+  </main>
+
+  <footer class="seo-footer">
+    <span class="footer-seo-line">CRN-3 91723 · Cambuí, Campinas</span>
+    <p>© 2026 Ana Fedel Nutricionista</p>
+  </footer>
+
+  <script src="site-shared.js" defer></script>
+  <script src="guia-access.js" defer></script>
+</body>
+</html>
