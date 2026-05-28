@@ -1,0 +1,47 @@
+{
+  "name": "ana-fedel",
+  "theme": "light",
+  "colors": {
+    "background": "#FAF7F4",
+    "surface": "#FFFFFF",
+    "surfaceAlt": "#D9C7BE",
+    "primary": "#6E3B46",
+    "primaryHover": "#5A2F38",
+    "accent": "#B89A95",
+    "text": "#4A403F",
+    "textHeading": "#2E2524",
+    "textMuted": "#B89A95",
+    "border": "#D9C7BE",
+    "success": "#2d6a4f",
+    "warning": "#b45309",
+    "error": "#9b2c2c",
+    "info": "#5c6b8a"
+  },
+  "spacing": {
+    "unit": 8,
+    "scale": [0, 4, 8, 16, 24, 32, 48, 64, 80, 96]
+  },
+  "typography": {
+    "ratio": 1.25,
+    "body": "Jost",
+    "display": "Cormorant Garamond"
+  },
+  "zIndex": {
+    "dropdown": 10,
+    "sticky": 20,
+    "overlay": 30,
+    "modal": 40,
+    "toast": 50,
+    "tooltip": 60
+  },
+  "motion": {
+    "fast": "150ms",
+    "normal": "250ms",
+    "slow": "300ms"
+  },
+  "accessibility": {
+    "minTouchTarget": 44,
+    "focusRing": "2px",
+    "contrastText": 4.5
+  }
+}

@@ -252,17 +252,22 @@
     </div>
   </div>
 
-  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
-
   <header>
     <nav id="navbar" class="site-nav" aria-label="Navegação principal">
       <a href="#inicio" class="nav-logo" aria-label="Ana Fedel Nutricionista — início">
         <img src="./img/logo.svg" alt="" width="120" height="40" decoding="async" aria-hidden="true" />
       </a>
-      <div class="nav-links">
-        <a href="#planos">Planos</a>
-        <a href="#metodo">Método</a>
-        <a href="#faq">FAQ</a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu">
+        <span class="nav-toggle__lines" aria-hidden="true"></span>
+      </button>
+      <div id="nav-menu" class="nav-menu">
+        <div class="nav-menu__inner">
+          <a href="#planos">Planos</a>
+          <a href="#metodo">Método</a>
+          <a href="#faq">FAQ</a>
+          <a href="#depoimentos">Depoimentos</a>
+          <a class="nav-menu__cta" href="#planos">Ver planos</a>
+        </div>
       </div>
     </nav>
   </header>
@@ -287,7 +292,7 @@
           <div class="hero-cta-actions">
             <div class="gcal-schedule-host gcal-schedule-host--primary gcal-schedule-host--hero" data-gcal-label="Agendar consulta"></div>
             <a class="btn-outline" href="#planos">Ver planos</a>
-            <a class="btn-outline hero-whatsapp-btn" data-wa="general" href="#">Falar no WhatsApp</a>
+            <a class="btn-outline hero-whatsapp-btn" data-wa="general" href="https://wa.me/5519992591776?text=Ol%C3%A1%2C%20Ana!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20acompanhamento%20nutricional." target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
           </div>
         </div>
       </div>
@@ -404,7 +409,7 @@
             <li>Acesso ilimitado ao aplicativo e materiais exclusivos</li>
           </ul>
           <div class="gcal-schedule-host gcal-schedule-host--outline" data-gcal-label="Agendar Plano Transformar"></div>
-          <a class="plan-whatsapp-link" data-wa="transformar" href="#">Tirar dúvidas no WhatsApp</a>
+          <a class="plan-whatsapp-link" data-wa="transformar" href="https://wa.me/5519992591776?text=Ol%C3%A1%2C%20Ana!%20Tenho%20interesse%20no%20Plano%20Transformar%20de%203%20meses.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" target="_blank" rel="noopener noreferrer">Tirar dúvidas no WhatsApp</a>
         </div>
       </div>
     </section>
@@ -416,9 +421,15 @@
         <h2 id="titulo-depoimentos" class="section-title">Depoimentos</h2>
         <p class="plans-intro">Histórias reais de pacientes em breve — estamos reunindo autorizações.</p>
       </div>
-      <div class="faq-grid">
-        <div class="faq-item reveal"><div class="faq-answer" style="opacity:1;transform:none;">Em breve você confere relatos de quem já passou pelo acompanhamento.</div></div>
-        <div class="faq-item reveal"><div class="faq-answer" style="opacity:1;transform:none;">Quer compartilhar sua experiência? Fale comigo após sua consulta.</div></div>
+      <div class="testimonial-grid">
+        <article class="testimonial-card reveal">
+          <span class="testimonial-card__mark" aria-hidden="true">“</span>
+          <p class="testimonial-card__text">Em breve você confere relatos de quem já passou pelo acompanhamento.</p>
+        </article>
+        <article class="testimonial-card testimonial-card--accent reveal">
+          <p class="testimonial-card__label">Sua história importa</p>
+          <p class="testimonial-card__text">Quer compartilhar sua experiência? Fale comigo após sua consulta.</p>
+        </article>
       </div>
     </section>
 
@@ -458,7 +469,10 @@
           </div>
         </div>
         <div class="philosophy-imgs reveal">
-          <img src="./img/consultorio.PNG" alt="Consultório da nutricionista Ana Fedel" loading="lazy" decoding="async" />
+          <picture>
+            <source srcset="./img/consultorio.jpg" type="image/jpeg" />
+            <img src="./img/consultorio.PNG" width="1400" height="933" alt="Consultório da nutricionista Ana Fedel" loading="lazy" decoding="async" />
+          </picture>
         </div>
       </div>
     </section>
@@ -616,17 +630,12 @@
     <span class="footer-seo-line">Nutricionista em Campinas · Atendimento online · Cambuí</span><br>
     © 2026 Ana Fedel Nutricionista · CRN 91723 · Todos os direitos reservados
   </div>
-  <a class="whatsapp-float" data-wa="general" href="#" aria-label="Falar com a Ana no WhatsApp">
+  <a class="whatsapp-float" data-wa="general" href="https://wa.me/5519992591776?text=Ol%C3%A1%2C%20Ana!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20acompanhamento%20nutricional." target="_blank" rel="noopener noreferrer" aria-label="Falar com a Ana no WhatsApp">
     WhatsApp
   </a>
 
   <script>
     (function () {
-      const navbar = document.getElementById('navbar');
-      window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 60);
-      });
-
       const loader = document.getElementById('page-loader');
       const LOADER_MIN_MS = 0;
 
@@ -695,35 +704,6 @@
         reveals.forEach((el) => observer.observe(el));
       }
 
-      const GCAL_SCHEDULE_URL = "https://calendar.google.com/calendar/appointments/AcZssZ0dGAXsBGvjWRiKiPCUCTKC4DncZaVeOFMWxT0=?gv=true";
-
-      function initGoogleSchedulingButtons() {
-        if (!window.calendar || !calendar.schedulingButton) return false;
-        document.querySelectorAll('.gcal-schedule-host').forEach((host) => {
-          if (host.dataset.gcalInitialized) return;
-          host.dataset.gcalInitialized = '1';
-          const marker = document.createElement('span');
-          marker.className = 'gcal-schedule-marker';
-          marker.setAttribute('aria-hidden', 'true');
-          host.appendChild(marker);
-          calendar.schedulingButton.load({
-            url: GCAL_SCHEDULE_URL,
-            color: '#6E3B46',
-            label: host.getAttribute('data-gcal-label') || 'Agendar',
-            target: marker,
-          });
-        });
-        return true;
-      }
-
-      function ensureGoogleSchedulingButtons() {
-        if (initGoogleSchedulingButtons()) return;
-        let n = 0;
-        const id = setInterval(() => {
-          if (initGoogleSchedulingButtons() || ++n > 100) clearInterval(id);
-        }, 50);
-      }
-
       document.body.classList.add('is-page-loading');
 
       const t0 = performance.now();
@@ -745,7 +725,7 @@
           document.body.classList.remove('is-page-loading');
           initImageProtection();
           initRevealAnimations();
-          ensureGoogleSchedulingButtons();
+          document.dispatchEvent(new CustomEvent('page-ready'));
         });
     })();
   </script>
