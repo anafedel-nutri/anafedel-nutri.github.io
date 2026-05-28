@@ -2506,10 +2506,20 @@ body.is-page-loading {
 }
 
 .guia-gate,
+.guia-pending,
 .guia-downloads {
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
+}
+
+.guia-pending .guia-form__submit {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.guia-pending .guia-logout {
+  margin-top: 4px;
 }
 
 .guia-gate__title,

@@ -1,0 +1,51 @@
+GUIA GRATUITO — APROVAÇÃO POR LINK NO E-MAIL
+============================================
+
+VALORES PRONTOS (gerados no seu PC)
+-----------------------------------
+Abra o arquivo VALORES-GERADOS.txt na pasta google-apps-script/
+(se não existir, copie guia-secrets.example.js → guia-secrets.js e gere novos tokens)
+
+PASSO A PASSO
+-------------
+1) Crie uma planilha Google (ex.: "Guias Ana Fedel")
+2) Extensões → Apps Script → cole todo o conteúdo de guia-aprovacao.gs
+3) No topo do script, substitua:
+   - ADMIN_EMAIL
+   - API_SECRET  (igual a guia-secrets.js → apiToken)
+   - ADMIN_TOKEN (só no Apps Script — nunca no site)
+4) Implantar → Nova implantação → App da Web
+   - Executar como: Eu
+   - Quem tem acesso: Qualquer pessoa
+5) Autorize o envio de e-mails quando o Google pedir
+6) Copie a URL da implantação para guia-secrets.js → apiUrl
+7) Commit + push do site (guia-secrets.js vai junto)
+
+ARQUIVOS NO SITE
+----------------
+- guia-gratuito.html — página do guia
+- guia-secrets.js — apiUrl + apiToken (apiToken = API_SECRET do script)
+- guia-access.js — lógica de solicitação e polling
+
+O QUE VOCÊ RECEBE NO E-MAIL
+---------------------------
+- Assunto: "Guia gratuito — aprovar email@..."
+- Botão verde: Aprovar acesso
+- Botão outline: Recusar
+
+AO CLICAR EM APROVAR
+--------------------
+- Página de confirmação no navegador
+- Planilha atualizada
+- Visitante vê o download em até ~20 s (polling)
+
+PLANILHA (aba "Acessos")
+------------------------
+A email | B status | C criado_em | D aprovado_em
+status: pendente | aprovado | recusado
+
+IMPORTANTE
+----------
+- Se alterar o código do Apps Script, crie NOVA implantação
+- ADMIN_TOKEN não deve aparecer no GitHub nem no JavaScript do site
+- apiToken no site é visível no navegador (limita abuso da API; aprovação real é manual)

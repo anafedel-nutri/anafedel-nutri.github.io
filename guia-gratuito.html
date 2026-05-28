@@ -7,7 +7,7 @@
   <script src="analytics.js" async></script>
   <meta name="theme-color" content="#6E3B46" />
   <title>Guia gratuito | Ana Fedel Nutricionista</title>
-  <meta name="description" content="Baixe o guia gratuito de circunferências corporais. Informe seu e-mail para acessar o material." />
+  <meta name="description" content="Baixe o guia gratuito de circunferências corporais. Solicite acesso com seu e-mail — liberação após aprovação." />
   <meta name="robots" content="noindex, follow" />
   <link rel="canonical" href="https://www.anafedel.com/guia-gratuito.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -48,7 +48,7 @@
 
     <section class="guia-gate" id="guia-gate" aria-labelledby="guia-gate-title">
       <h2 id="guia-gate-title" class="guia-gate__title">Acesse com seu e-mail</h2>
-      <p class="guia-gate__intro">Informe seu e-mail para liberar o download dos guias em PDF.</p>
+      <p class="guia-gate__intro">Informe seu e-mail para solicitar o material. O download será liberado após aprovação.</p>
       <form id="guia-email-form" class="guia-form" novalidate>
         <label class="guia-form__label" for="guia-email">E-mail</label>
         <input
@@ -62,11 +62,20 @@
           placeholder="seu@email.com"
         />
         <p class="guia-form__error" id="guia-form-error" role="alert" hidden></p>
-        <button class="guia-form__submit" type="submit">Acessar guias</button>
+        <button class="guia-form__submit" type="submit">Solicitar acesso</button>
       </form>
       <p class="guia-gate__privacy">
         Ao continuar, você concorda em receber o material e comunicações da Ana Fedel. Seus dados não são compartilhados com terceiros.
       </p>
+    </section>
+
+    <section class="guia-pending" id="guia-pending" hidden aria-labelledby="guia-pending-title">
+      <h2 id="guia-pending-title" class="guia-gate__title">Aguardando aprovação</h2>
+      <p class="guia-gate__intro">
+        Sua solicitação para <strong id="guia-pending-email"></strong> foi enviada. Assim que for aprovada, os downloads aparecerão aqui automaticamente.
+      </p>
+      <button type="button" class="guia-form__submit" id="guia-check-status">Verificar status agora</button>
+      <button type="button" class="guia-logout" id="guia-pending-logout">Usar outro e-mail</button>
     </section>
 
     <section class="guia-downloads" id="guia-downloads" hidden aria-labelledby="guia-downloads-title">
@@ -92,6 +101,7 @@
     <p>© 2026 Ana Fedel Nutricionista</p>
   </footer>
 
+  <script src="guia-secrets.js"></script>
   <script src="site-shared.js" defer></script>
   <script src="guia-access.js" defer></script>
 </body>
