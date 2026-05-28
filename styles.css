@@ -832,7 +832,16 @@ body.is-page-loading {
 }
 
 .plan-card .gcal-schedule-host--outline {
-  margin-top: auto;
+  display: block;
+  width: 100%;
+  margin-top: 0;
+}
+
+.plan-card .gcal-schedule-host--outline .qxCTlb {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
 }
 
 .plan-card.featured .gcal-schedule-host--outline .qxCTlb {
@@ -1093,6 +1102,7 @@ body.is-page-loading {
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+  align-items: stretch;
 }
 
 .plan-card {
@@ -1103,9 +1113,43 @@ body.is-page-loading {
   position: relative;
   display: flex;
   flex-direction: column;
+  height: 100%;
   transition:
     transform var(--duration-normal) var(--ease-out),
     box-shadow var(--duration-normal) var(--ease-out);
+}
+
+.plan-card__header {
+  flex-shrink: 0;
+}
+
+.plan-card__badge-slot {
+  min-height: 34px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.plan-card__title {
+  min-height: 4.25rem;
+  margin-bottom: 12px;
+}
+
+.plan-card__footer {
+  margin-top: auto;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+}
+
+.plan-card__whatsapp-slot {
+  min-height: var(--touch-min);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .plan-card:hover {
@@ -1135,6 +1179,7 @@ body.is-page-loading {
   font-weight: 600;
   color: var(--rose-taupe);
   margin-bottom: 8px;
+  line-height: 1.4;
 }
 
 .plan-card.featured .plan-name {
@@ -1146,7 +1191,8 @@ body.is-page-loading {
   font-size: 2rem;
   font-weight: 400;
   color: var(--text-title);
-  margin-bottom: 28px;
+  margin-bottom: 0;
+  line-height: 1.15;
 }
 
 .plan-card.featured .plan-duration {
@@ -1156,7 +1202,7 @@ body.is-page-loading {
 .plan-card ul {
   list-style: none;
   flex: 1;
-  margin-bottom: 36px;
+  margin-bottom: 0;
 }
 
 .plan-card li {
@@ -1989,18 +2035,21 @@ body.is-page-loading {
   }
 
   .gcal-schedule-host--primary.gcal-schedule-host--hero {
-    width: 100%;
+    width: fit-content;
     max-width: 100%;
-    align-self: stretch;
+    align-self: center;
   }
 
   .gcal-schedule-host--primary.gcal-schedule-host--hero .qxCTlb {
-    width: 100% !important;
+    width: auto !important;
+    max-width: 100%;
     box-sizing: border-box;
   }
 
-  .hero-cta-actions .btn-outline.hero-whatsapp-btn {
-    width: 100%;
+  .hero-cta-actions .btn-outline {
+    width: fit-content;
+    max-width: 100%;
+    align-self: center;
     text-align: center;
     justify-content: center;
   }
@@ -2054,6 +2103,18 @@ body.is-page-loading {
   .philosophy-grid,
   .faq-grid {
     grid-template-columns: 1fr;
+  }
+
+  .plan-card__badge-slot:empty,
+  .plan-card__whatsapp-slot:empty {
+    display: none;
+    min-height: 0;
+    margin: 0;
+  }
+
+  .plan-card__title,
+  .plan-audience {
+    min-height: 0;
   }
 
   .for-whom-grid {
@@ -2265,6 +2326,12 @@ body.is-page-loading {
   margin-bottom: 20px;
 }
 
+.seo-signature {
+  margin-top: 28px;
+  margin-bottom: 0;
+  color: var(--text-title);
+}
+
 .seo-cta-box {
   margin-top: 48px;
   padding: 32px 28px;
@@ -2450,8 +2517,17 @@ body.is-page-loading {
 .plan-audience {
   font-size: 0.9rem;
   color: var(--text-mid);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   line-height: 1.5;
+  min-height: 2.85em;
+}
+
+.plan-card.featured .plan-tagline {
+  color: var(--nude);
+}
+
+.plan-card.featured .plan-audience {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .plan-badge {
@@ -2464,18 +2540,27 @@ body.is-page-loading {
   color: #fff;
   padding: 6px 12px;
   border-radius: 999px;
-  margin-bottom: 12px;
+  margin-bottom: 0;
 }
 
 .plan-whatsapp-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   min-height: var(--touch-min);
-  margin-top: var(--space-3);
+  margin-top: 0;
   font-size: var(--text-sm);
   color: var(--bordeaux);
   text-decoration: none;
   transition: color var(--duration-fast) var(--ease-out);
+}
+
+.plan-card.featured .plan-whatsapp-link {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.plan-card.featured .plan-whatsapp-link:hover {
+  color: #fff;
 }
 
 .plan-whatsapp-link:hover {
