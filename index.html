@@ -252,13 +252,6 @@
 </head>
 <body>
 
-  <div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-busy="true">
-    <div class="page-loader__inner">
-      <span class="page-loader__spinner" aria-hidden="true"></span>
-      <span class="page-loader__text">Um instante…</span>
-    </div>
-  </div>
-
   <header>
     <nav id="navbar" class="site-nav" aria-label="Navegação principal">
       <a href="#inicio" class="nav-logo" aria-label="Ana Fedel Nutricionista — início">
@@ -409,7 +402,9 @@
       <div class="plans-grid">
         <div class="plan-card reveal">
           <div class="plan-card__header">
-            <div class="plan-card__badge-slot" aria-hidden="true"></div>
+            <div class="plan-card__badge-slot">
+              <span class="plan-badge">Ideal para o primeiro passo</span>
+            </div>
             <p class="plan-tagline">Comece com clareza</p>
             <div class="plan-card__title">
               <div class="plan-name">Plano Essencial</div>
@@ -767,23 +762,6 @@
 
   <script>
     (function () {
-      const loader = document.getElementById('page-loader');
-      const LOADER_MIN_MS = 0;
-
-      function waitForImages() {
-        return Promise.all(
-          [...document.querySelectorAll('img[src]')].map((img) => {
-            if (img.closest('.hero')) return Promise.resolve();
-            if (img.loading === 'lazy') return Promise.resolve();
-            if (img.complete && img.naturalHeight > 0) return Promise.resolve();
-            return new Promise((resolve) => {
-              img.addEventListener('load', resolve, { once: true });
-              img.addEventListener('error', resolve, { once: true });
-            });
-          })
-        );
-      }
-
       function initImageProtection() {
         const images = document.querySelectorAll('img');
         images.forEach((img) => {
@@ -835,29 +813,16 @@
         reveals.forEach((el) => observer.observe(el));
       }
 
-      document.body.classList.add('is-page-loading');
+      function initPage() {
+        initImageProtection();
+        initRevealAnimations();
+      }
 
-      const t0 = performance.now();
-      const safetyMs = 8000;
-      const safety = new Promise((r) => setTimeout(r, safetyMs));
-      Promise.race([
-        Promise.all([document.fonts.ready.catch(() => {}), waitForImages()]),
-        safety
-      ])
-        .then(() => {
-          const elapsed = performance.now() - t0;
-          const rest = Math.max(0, LOADER_MIN_MS - elapsed);
-          return new Promise((r) => setTimeout(r, rest));
-        })
-        .then(() => {
-          loader.classList.add('is-hidden');
-          loader.setAttribute('aria-busy', 'false');
-          loader.setAttribute('aria-hidden', 'true');
-          document.body.classList.remove('is-page-loading');
-          initImageProtection();
-          initRevealAnimations();
-          document.dispatchEvent(new CustomEvent('page-ready'));
-        });
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPage);
+      } else {
+        initPage();
+      }
     })();
   </script>
   <script src="site-shared.js" defer></script>

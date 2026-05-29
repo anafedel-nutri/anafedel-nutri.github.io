@@ -156,63 +156,13 @@ body > header {
 
 body > main,
 body > footer,
-body > .whatsapp-float,
-body > .page-loader {
+body > .whatsapp-float {
   position: relative;
   z-index: 1;
 }
 
 body.nav-open {
   overflow: hidden;
-}
-
-body.is-page-loading {
-  overflow: hidden;
-}
-
-/* Loader inicial (imagens / fontes) */
-.page-loader {
-  position: fixed;
-  inset: 0;
-  z-index: var(--z-toast);
-  display: grid;
-  place-items: center;
-  background: var(--cream);
-  transition: opacity 0.55s var(--ease-out), visibility 0.55s var(--ease-out);
-}
-
-.page-loader.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.page-loader__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-4);
-}
-
-.page-loader__spinner {
-  width: 44px;
-  height: 44px;
-  border: 3px solid var(--border);
-  border-top-color: var(--accent);
-  border-radius: 50%;
-  animation: page-loader-spin 0.75s linear infinite;
-}
-
-.page-loader__text {
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--text-mid);
-  font-weight: 500;
-}
-
-@keyframes page-loader-spin {
-  to { transform: rotate(360deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -231,16 +181,6 @@ body.is-page-loading {
   .nav-toggle:active,
   .gcal-schedule-host .qxCTlb:active {
     transform: none;
-  }
-
-  .page-loader__spinner {
-    animation: none;
-    border-top-color: var(--accent);
-    opacity: 0.85;
-  }
-
-  .page-loader {
-    transition: opacity 0.25s ease, visibility 0.25s ease;
   }
 }
 
@@ -1118,6 +1058,7 @@ body.is-page-loading {
   display: flex;
   flex-direction: column;
   height: 100%;
+  text-align: left;
   transition:
     transform var(--duration-normal) var(--ease-out),
     box-shadow var(--duration-normal) var(--ease-out);
@@ -1125,6 +1066,7 @@ body.is-page-loading {
 
 .plan-card__header {
   flex-shrink: 0;
+  text-align: center;
 }
 
 .plan-card__badge-slot {
@@ -1132,6 +1074,7 @@ body.is-page-loading {
   margin-bottom: 12px;
   display: flex;
   align-items: flex-end;
+  justify-content: center;
 }
 
 .plan-card__title {
@@ -1216,7 +1159,9 @@ body.is-page-loading {
   border-bottom: 1px solid var(--border);
   display: flex;
   align-items: flex-start;
+  justify-content: flex-start;
   gap: 10px;
+  text-align: left;
 }
 
 .plan-card.featured li {
@@ -2491,6 +2436,61 @@ body.is-page-loading {
 .links-stack a.links-outline:active {
   background: var(--btn-active);
   border-color: var(--btn-active);
+  transform: scale(0.98);
+}
+
+/* Página Links — todos os botões no estilo outline (como “Voltar aos links”) */
+.links-page .links-stack > a {
+  background: transparent;
+  color: var(--bordeaux);
+  border: 1.5px solid var(--bordeaux);
+}
+
+.links-page .links-stack > a:hover {
+  background: var(--bordeaux);
+  color: var(--ui-on-primary);
+}
+
+.links-page .links-stack > a:active {
+  background: var(--btn-active);
+  border-color: var(--btn-active);
+  transform: scale(0.98);
+}
+
+.links-page .links-stack .gcal-schedule-host {
+  width: 100%;
+}
+
+.links-page .links-stack .gcal-schedule-host--primary .qxCTlb {
+  width: 100% !important;
+  display: block !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
+  border-radius: var(--radius-md) !important;
+  padding: var(--space-3) var(--space-4) !important;
+  font-family: var(--font-body) !important;
+  font-size: var(--text-sm) !important;
+  font-weight: 500 !important;
+  letter-spacing: normal !important;
+  background: transparent !important;
+  color: var(--bordeaux) !important;
+  border: 1.5px solid var(--bordeaux) !important;
+  transition:
+    background var(--duration-normal) var(--ease-out),
+    color var(--duration-normal) var(--ease-out),
+    border-color var(--duration-normal) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out) !important;
+}
+
+.links-page .links-stack .gcal-schedule-host--primary .qxCTlb:hover {
+  background: var(--bordeaux) !important;
+  color: var(--ui-on-primary) !important;
+}
+
+.links-page .links-stack .gcal-schedule-host--primary .qxCTlb:active {
+  background: var(--btn-active) !important;
+  border-color: var(--btn-active) !important;
+  transform: scale(0.98) !important;
 }
 
 .links-stack span.links-disabled {
@@ -2676,11 +2676,16 @@ body.is-page-loading {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  background: var(--bordeaux);
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 999px;
+  color: var(--bordeaux);
+  background: none;
+  padding: 0;
+  border: none;
+  border-radius: 0;
   margin-bottom: 0;
+}
+
+.plan-card.featured .plan-badge {
+  color: var(--nude);
 }
 
 .plan-whatsapp-link {
