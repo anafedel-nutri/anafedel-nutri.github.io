@@ -212,7 +212,7 @@
       }
       await handleStatus(email);
     } catch {
-      showError('Não foi possível enviar sua solicitação. Tente novamente em instantes.');
+      showError('Não foi possível enviar sua solicitação. Verifique sua conexão e tente novamente.');
       showGate();
     } finally {
       if (submitBtn) {
@@ -251,14 +251,8 @@
   }
 
   function boot() {
-    if (!apiConfigured()) {
-      showGate();
-      showError('Não foi possível carregar o sistema de aprovação. Tente novamente em instantes ou fale conosco pelo WhatsApp.');
-      return;
-    }
-
     const saved = readAccess();
-    if (saved) {
+    if (saved && apiConfigured()) {
       fetchStatus(saved)
         .then((status) => {
           if (status === 'aprovado') {
