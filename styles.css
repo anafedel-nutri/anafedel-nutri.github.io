@@ -165,11 +165,11 @@ body.nav-open {
   overflow: hidden;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .nav-menu.is-open {
-    animation: none;
-  }
+body.nav-open > main {
+  z-index: 0;
+}
 
+@media (prefers-reduced-motion: reduce) {
   .testimonial-card:hover,
   .testimonial-card:active,
   .plan-card:hover,
@@ -1928,7 +1928,7 @@ body.nav-open {
 /* ─── RESPONSIVE ─── */
 @media (max-width: 767px) {
   :root {
-    --nav-bar-height: calc(env(safe-area-inset-top, 0px) + 72px);
+    --nav-bar-height: calc(env(safe-area-inset-top, 0px) + 80px);
   }
 
   .site-nav {
@@ -1937,6 +1937,7 @@ body.nav-open {
     gap: 12px;
     position: relative;
     z-index: 2;
+    background: transparent;
   }
 
   .nav-logo img {
@@ -1950,10 +1951,19 @@ body.nav-open {
   body > header {
     position: sticky;
     top: 0;
-    z-index: var(--z-overlay);
-    background: rgba(250, 247, 244, 0.96);
-    backdrop-filter: blur(8px);
+    z-index: var(--z-modal);
+    background: var(--cream);
     box-shadow: 0 1px 0 var(--border);
+  }
+
+  body.nav-open > header {
+    box-shadow: none;
+    z-index: calc(var(--z-modal) + 1);
+  }
+
+  .nav-logo {
+    position: relative;
+    z-index: 2;
   }
 
   .nav-toggle {
@@ -1961,44 +1971,43 @@ body.nav-open {
     margin-left: auto;
     position: relative;
     z-index: 2;
+    background: var(--cream);
+    box-shadow: 0 1px 4px rgba(46, 37, 36, 0.08);
   }
 
   .nav-menu {
     display: none;
     position: fixed;
-    top: var(--nav-bar-height, 72px);
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 1;
+    inset: 0;
+    z-index: var(--z-modal);
     align-items: stretch;
-    justify-content: center;
-    padding: 24px 24px 32px;
-    background: rgba(250, 247, 244, 0.98);
-    backdrop-filter: blur(12px);
+    justify-content: flex-start;
+    padding: var(--nav-bar-height, 80px) 24px 32px;
+    background: var(--cream);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
   }
 
   .nav-menu.is-open {
     display: flex;
-    animation: nav-fade-in 0.35s ease;
-  }
-
-  @keyframes nav-fade-in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+    pointer-events: auto;
+    visibility: visible;
+    opacity: 1;
   }
 
   .nav-menu__inner {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 28px;
     width: 100%;
     max-width: 320px;
+    margin: 0 auto;
+    padding: 16px 0 32px;
   }
 
   .nav-menu__inner a {
@@ -2009,6 +2018,7 @@ body.nav-open {
     align-items: center;
     justify-content: center;
     padding: 8px 12px;
+    color: var(--text-title);
   }
 
   .nav-menu__cta {
