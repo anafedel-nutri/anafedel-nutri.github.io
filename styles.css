@@ -161,6 +161,46 @@ body > .whatsapp-float {
   z-index: 1;
 }
 
+/* Proteção de imagens — camada transparente bloqueia clique direito, arrastar e toque longo (mobile) */
+.img-protected {
+  position: relative;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.img-protected-wrap {
+  display: block;
+  line-height: 0;
+  max-width: 100%;
+}
+
+.img-protected::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: block;
+  background: transparent;
+  cursor: default;
+  -webkit-touch-callout: none;
+}
+
+.img-protected img {
+  display: block;
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
+  -webkit-touch-callout: none;
+}
+
+.about-img.img-protected .about-img-accent {
+  z-index: 1;
+  pointer-events: none;
+}
+
 body.nav-open {
   overflow: hidden;
 }

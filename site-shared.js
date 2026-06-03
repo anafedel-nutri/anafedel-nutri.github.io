@@ -1,4 +1,77 @@
 (function () {
+  const LOGO_SRC = /logo(-s)?\.svg(\?.*)?$/i;
+
+  function isLogoImage(img) {
+    if (img.getAttribute('aria-hidden') === 'true') return true;
+    if (img.closest('.nav-logo')) return true;
+    const src = (img.getAttribute('src') || '').split('/').pop() || '';
+    return LOGO_SRC.test(src);
+  }
+
+  function getImageShield(img) {
+    const parent = img.parentElement;
+    if (parent && parent.tagName === 'PICTURE') return parent;
+    if (parent && parent.classList.contains('about-img')) return parent;
+    return null;
+  }
+
+  function initImageProtection() {
+    document.querySelectorAll('img').forEach((img) => {
+      if (isLogoImage(img) || img.dataset.protected === '1') return;
+
+      img.dataset.protected = '1';
+      img.draggable = false;
+      img.setAttribute('draggable', 'false');
+
+      let shield = getImageShield(img);
+      if (!shield) {
+        if (img.parentElement && img.parentElement.classList.contains('img-protected-wrap')) {
+          shield = img.parentElement;
+        } else {
+          const wrap = document.createElement('span');
+          wrap.className = 'img-protected img-protected-wrap';
+          img.replaceWith(wrap);
+          wrap.appendChild(img);
+          shield = wrap;
+        }
+      }
+
+      shield.classList.add('img-protected');
+    });
+
+    document.addEventListener(
+      'contextmenu',
+      (event) => {
+        if (event.target.closest('.img-protected')) event.preventDefault();
+      },
+      true
+    );
+
+    document.addEventListener(
+      'dragstart',
+      (event) => {
+        if (event.target.closest('.img-protected')) event.preventDefault();
+      },
+      true
+    );
+
+    document.addEventListener(
+      'copy',
+      (event) => {
+        if (event.target.closest('.img-protected')) event.preventDefault();
+      },
+      true
+    );
+
+    document.addEventListener(
+      'selectstart',
+      (event) => {
+        if (event.target.closest('.img-protected')) event.preventDefault();
+      },
+      true
+    );
+  }
+
   const WA_PHONE = '5519992591776';
   const WA_MSG = {
     general: 'Olá, Ana! Vim pelo site e gostaria de saber mais sobre o acompanhamento nutricional.',
@@ -369,9 +442,14 @@
     onPageReady();
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initMobileNav);
-  } else {
+  function onDomReady() {
+    initImageProtection();
     initMobileNav();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', onDomReady);
+  } else {
+    onDomReady();
   }
 })();

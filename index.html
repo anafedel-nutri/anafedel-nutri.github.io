@@ -319,7 +319,7 @@
       <div class="for-whom-grid">
         <div class="for-whom-item reveal">
           <h3 class="for-whom-heading">Nutrição clínica</h3>
-          <p>Metabolismo, exames e sintomas com estratégia alimentar individualizada. Inclui TPM, SOP e menopausa quando fazem parte do seu quadro.</p>
+          <p>Metabolismo, exames e sintomas com estratégia alimentar individualizada — também TPM, SOP e menopausa, quando indicado.</p>
           <a class="for-whom-link" href="saude-hormonal-feminina.html">Ver como funciona</a>
         </div>
         <div class="for-whom-item reveal">
@@ -767,38 +767,6 @@
 
   <script>
     (function () {
-      function initImageProtection() {
-        const images = document.querySelectorAll('img');
-        images.forEach((img) => {
-          img.setAttribute('draggable', 'false');
-          img.setAttribute('oncontextmenu', 'return false');
-          img.style.webkitUserDrag = 'none';
-          img.style.userSelect = 'none';
-        });
-
-        document.addEventListener('contextmenu', (event) => {
-          if (event.target.closest('img')) event.preventDefault();
-        });
-
-        document.addEventListener('dragstart', (event) => {
-          if (event.target.closest('img')) event.preventDefault();
-        });
-
-        document.addEventListener('copy', (event) => {
-          if (event.target.closest('img')) event.preventDefault();
-        });
-
-        document.addEventListener('keydown', (event) => {
-          const key = event.key.toLowerCase();
-          const ctrlOrCmd = event.ctrlKey || event.metaKey;
-          const blockedCombo =
-            (ctrlOrCmd && (key === 's' || key === 'u' || key === 'p' || key === 'c')) ||
-            key === 'printscreen' ||
-            key === 'f12';
-          if (blockedCombo) event.preventDefault();
-        });
-      }
-
       function initRevealAnimations() {
         const reveals = document.querySelectorAll('.reveal');
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -819,7 +787,6 @@
       }
 
       function initPage() {
-        initImageProtection();
         initRevealAnimations();
       }
 
