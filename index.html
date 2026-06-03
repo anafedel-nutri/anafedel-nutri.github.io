@@ -20,14 +20,14 @@
   <meta property="og:image:width" content="1600" />
   <meta property="og:image:height" content="2133" />
   <meta property="og:description" content="Plano alimentar na sua rotina — emagrecimento e nutrição clínica em Campinas ou online, com acompanhamento personalizado." />
-  <meta property="og:image" content="https://www.anafedel.com/img/hero-ana-fedel-1600.jpg" />
+  <meta property="og:image" content="https://www.anafedel.com/img/hero-ana-fedel-1600.png" />
   <meta property="og:image:alt" content="Ana Fedel, nutricionista em Campinas" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Ana Fedel | Nutricionista em Campinas" />
   <meta name="twitter:description" content="Emagrecimento, nutrição clínica e acompanhamento personalizado em Campinas e online." />
-  <meta name="twitter:image" content="https://www.anafedel.com/img/hero-ana-fedel-1600.jpg" />
+  <meta name="twitter:image" content="https://www.anafedel.com/img/hero-ana-fedel-1600.png" />
   <link rel="icon" href="./img/logo-s.svg" type="image/svg+xml" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -105,8 +105,7 @@
       border-color: #5A2F38 !important;
     }
   </style>
-  <link rel="preload" as="image" href="./img/hero-ana-fedel-1600-mobile.jpg" media="(max-width: 767px)" fetchpriority="high" />
-  <link rel="preload" as="image" href="./img/hero-ana-fedel-1600.jpg" media="(min-width: 768px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="./img/hero-ana-fedel-1600.png" fetchpriority="high" />
 
   <script type="application/ld+json">
   {
@@ -117,7 +116,7 @@
         "@id": "https://www.anafedel.com/#profissional",
         "name": "Ana Fedel",
         "url": "https://www.anafedel.com/",
-        "image": "https://www.anafedel.com/img/hero-ana-fedel-1600.jpg",
+        "image": "https://www.anafedel.com/img/hero-ana-fedel-1600.png",
         "description": "Nutricionista em Campinas e online. Emagrecimento, nutrição clínica e plano alimentar na rotina do paciente.",
         "identifier": {
           "@type": "PropertyValue",
@@ -145,7 +144,7 @@
         "@id": "https://www.anafedel.com/#local",
         "name": "Ana Fedel Nutricionista",
         "url": "https://www.anafedel.com/",
-        "image": "https://www.anafedel.com/img/hero-ana-fedel-1600.jpg",
+        "image": "https://www.anafedel.com/img/hero-ana-fedel-1600.png",
         "telephone": "+5519992591776",
         "address": {
           "@type": "PostalAddress",
@@ -263,7 +262,6 @@
       </button>
       <div id="nav-menu" class="nav-menu">
         <div class="nav-menu__inner">
-          <a href="#inicio">Início</a>
           <a href="#planos">Planos</a>
           <a href="#metodo">Método</a>
           <a href="#faq">FAQ</a>
@@ -278,8 +276,8 @@
     <!-- HERO -->
     <section id="inicio" class="hero" aria-labelledby="hero-titulo">
       <picture class="hero-bg">
-        <source media="(max-width: 767px)" srcset="./img/hero-ana-fedel-1600-mobile.jpg" />
-        <img src="./img/hero-ana-fedel-1600.jpg" width="1600" height="2133" alt="Retrato da nutricionista Ana Fedel" fetchpriority="high" decoding="async" />
+        <source media="(max-width: 767px)" srcset="./img/hero-ana-fedel-1600.png" />
+        <img src="./img/hero-ana-fedel-1600.png" width="1600" height="2133" alt="Retrato da nutricionista Ana Fedel" fetchpriority="high" decoding="async" />
       </picture>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-left reveal">
@@ -732,7 +730,7 @@
       <a href="#faq">Perguntas frequentes</a>
       <a href="nutricionista-em-campinas.html">Nutricionista em Campinas</a>
       <a href="emagrecimento-feminino.html">Emagrecimento</a>
-      <a href="saude-hormonal-feminina.html">Nutrição clínica</a>
+      <a href="saude-hormonal-feminina.html">Nutrição clínica feminina</a>
       <a href="reeducacao-alimentar.html">Reeducação alimentar</a>
       <a href="bioimpedancia-campinas.html">Bioimpedância Campinas</a>
       <a href="consulta-online.html">Consulta online</a>
@@ -758,7 +756,7 @@
     </div>
   </footer>
   <div class="footer-bottom">
-    <span class="footer-seo-line">Nutricionista em Campinas · Atendimento online e presencial</span><br>
+    <span class="footer-seo-line">Nutricionista em Campinas · Atendimento Online · Presencial</span><br>
     © 2026 Ana Fedel Nutricionista · CRN-3 91723 · Todos os direitos reservados
   </div>
   <a class="whatsapp-float" data-wa="general" href="https://wa.me/5519992591776?text=Ol%C3%A1%2C%20Ana!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20acompanhamento%20nutricional." target="_blank" rel="noopener noreferrer" aria-label="Falar com a Ana no WhatsApp">
@@ -767,6 +765,38 @@
 
   <script>
     (function () {
+      function initImageProtection() {
+        const images = document.querySelectorAll('img');
+        images.forEach((img) => {
+          img.setAttribute('draggable', 'false');
+          img.setAttribute('oncontextmenu', 'return false');
+          img.style.webkitUserDrag = 'none';
+          img.style.userSelect = 'none';
+        });
+
+        document.addEventListener('contextmenu', (event) => {
+          if (event.target.closest('img')) event.preventDefault();
+        });
+
+        document.addEventListener('dragstart', (event) => {
+          if (event.target.closest('img')) event.preventDefault();
+        });
+
+        document.addEventListener('copy', (event) => {
+          if (event.target.closest('img')) event.preventDefault();
+        });
+
+        document.addEventListener('keydown', (event) => {
+          const key = event.key.toLowerCase();
+          const ctrlOrCmd = event.ctrlKey || event.metaKey;
+          const blockedCombo =
+            (ctrlOrCmd && (key === 's' || key === 'u' || key === 'p' || key === 'c')) ||
+            key === 'printscreen' ||
+            key === 'f12';
+          if (blockedCombo) event.preventDefault();
+        });
+      }
+
       function initRevealAnimations() {
         const reveals = document.querySelectorAll('.reveal');
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -787,6 +817,7 @@
       }
 
       function initPage() {
+        initImageProtection();
         initRevealAnimations();
       }
 
