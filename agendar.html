@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Agendar Consulta | Ana Fedel Nutricionista</title>
+  <link rel="icon" href="./img/logo-s.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: #faf7f5;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      max-width: 480px;
+      width: 100%;
+      padding: 36px 28px 32px;
+      box-shadow: 0 4px 32px rgba(110,59,70,0.10);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .logo img {
+      height: 36px;
+      width: auto;
+    }
+
+    .logo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #3b1c24;
+      line-height: 1.2;
+    }
+
+    .logo-name span {
+      display: block;
+      font-size: 0.78rem;
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      color: #888;
+      letter-spacing: 0.04em;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #3b1c24;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 0.92rem;
+      color: #666;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .notice-box {
+      background: #f7f3f4;
+      border-radius: 12px;
+      padding: 6px 4px;
+      margin-bottom: 24px;
+    }
+
+    .notice-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #6E3B46;
+      padding: 8px 14px 4px;
+    }
+
+    .payment-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      text-decoration: none;
+      color: #3b1c24;
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+
+    .payment-item:hover {
+      background: #efe6e9;
+    }
+
+    .payment-item .icon {
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .payment-item .label {
+      font-size: 0.95rem;
+      font-weight: 500;
+      flex: 1;
+    }
+
+    .payment-item .badge {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #6E3B46;
+      background: #f0e6e9;
+      padding: 4px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #e8dfe1;
+      margin: 0 14px;
+    }
+
+    .confirm-note {
+      font-size: 0.84rem;
+      color: #888;
+      margin-bottom: 22px;
+      line-height: 1.55;
+    }
+
+    .btn-calendar {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: #6E3B46;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: background 0.15s, transform 0.1s;
+    }
+
+    .btn-calendar:hover {
+      background: #5a2f3a;
+    }
+
+    .btn-calendar:active {
+      transform: scale(0.98);
+    }
+
+    .footer-link {
+      display: block;
+      text-align: center;
+      margin-top: 18px;
+      font-size: 0.82rem;
+      color: #aaa;
+      text-decoration: none;
+    }
+
+    .footer-link:hover {
+      color: #6E3B46;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <img src="./img/logo-s.svg" alt="Logo Ana Fedel" onerror="this.style.display='none'">
+      <div class="logo-name">
+        Ana Fedel
+        <span>Nutricionista · CRN-3 91723</span>
+      </div>
+    </div>
+
+    <h1>Antes de agendar</h1>
+    <p class="subtitle">O pagamento antecipado é obrigatório para confirmar sua consulta.</p>
+
+    <div class="notice-box">
+      <p class="notice-label">💳 Pague primeiro</p>
+
+      <a class="payment-item" href="https://mpago.la/2sd8YVK" target="_blank" rel="noopener noreferrer">
+        <span class="icon">💚</span>
+        <span class="label">Consulta</span>
+        <span class="badge">Pagar agora</span>
+      </a>
+
+      <hr class="divider">
+
+      <a class="payment-item" href="https://mpago.la/2L66JX4" target="_blank" rel="noopener noreferrer">
+        <span class="icon">🧡</span>
+        <span class="label">Retorno</span>
+        <span class="badge">Pagar agora</span>
+      </a>
+
+      <hr class="divider">
+
+      <a class="payment-item" href="https://mpago.la/2pLWpef" target="_blank" rel="noopener noreferrer">
+        <span class="icon">🌟</span>
+        <span class="label">Plano Transformar 3 meses</span>
+        <span class="badge">Pagar agora</span>
+      </a>
+    </div>
+
+    <p class="confirm-note">Após o pagamento, escolha seu horário no calendário. Sua consulta ficará confirmada!</p>
+
+    <a class="btn-calendar" href="https://calendar.app.google/9zhMt2G8dWztwxTz7" target="_blank" rel="noopener noreferrer">
+      Escolher horário no calendário
+    </a>
+
+    <a class="footer-link" href="https://www.anafedel.com">← Voltar para o site</a>
+  </div>
+</body>
+</html>
