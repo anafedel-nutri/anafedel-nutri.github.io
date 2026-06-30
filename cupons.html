@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupons de Desconto | Ana Fedel Nutrição</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: linear-gradient(135deg, #faf8f6 0%, #f5f1ed 100%);
+            color: #2a2a2a;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 600;
+            color: #8b4559;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 300;
+            color: #2a2a2a;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 50px;
+            line-height: 1.7;
+        }
+
+        .cupons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .cupom-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #8b4559;
+        }
+
+        .cupom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(139, 69, 89, 0.12);
+        }
+
+        .marca-nome {
+            font-size: 24px;
+            font-weight: 600;
+            color: #8b4559;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .desconto {
+            font-size: 48px;
+            font-weight: 300;
+            color: #2a2a2a;
+            margin: 20px 0;
+            line-height: 1;
+        }
+
+        .desconto span {
+            font-size: 28px;
+            font-weight: 400;
+        }
+
+        .cupom-codigo {
+            background: #faf8f6;
+            border: 2px solid #e8e2dc;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 25px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #2a2a2a;
+            word-break: break-all;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cupom-codigo:hover {
+            background: #e8e2dc;
+            border-color: #8b4559;
+        }
+
+        .descricao-cupom {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .botao-copiar {
+            background: #8b4559;
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .botao-copiar:hover {
+            background: #6d3543;
+            transform: translateY(-2px);
+        }
+
+        .botao-copiar.copiado {
+            background: #7cb342;
+        }
+
+        .info-box {
+            background: rgba(139, 69, 89, 0.08);
+            border-left: 4px solid #8b4559;
+            padding: 24px;
+            border-radius: 8px;
+            margin: 40px 0;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #2a2a2a;
+        }
+
+        .info-box strong {
+            color: #8b4559;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 1px solid #e8e2dc;
+        }
+
+        .cta-texto {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .botao-primario {
+            display: inline-block;
+            background: #8b4559;
+            color: white;
+            padding: 16px 48px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            margin: 0 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .botao-primario:hover {
+            background: #6d3543;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(139, 69, 89, 0.25);
+        }
+
+        .botao-secundario {
+            display: inline-block;
+            background: transparent;
+            color: #8b4559;
+            padding: 16px 48px;
+            border: 2px solid #8b4559;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .botao-secundario:hover {
+            background: #8b4559;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid #e8e2dc;
+            font-size: 14px;
+            color: #999;
+        }
+
+        .voltar-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #8b4559;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .voltar-link:hover {
+            color: #6d3543;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            .desconto {
+                font-size: 36px;
+            }
+
+            .cupons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #7cb342;
+            color: white;
+            padding: 16px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="links.html" class="voltar-link">← Voltar aos links</a>
+
+        <header>
+            <div class="logo">Ana Fedel Nutrição</div>
+            <h1>Cupons de Desconto</h1>
+            <p class="subtitle">Já que você está aqui, aproveita essas ofertas especiais em suplementos de qualidade. Parceiros que confiam no mesmo trabalho que eu faço.</p>
+        </header>
+
+        <div class="cupons-grid">
+            <div class="cupom-card">
+                <div class="marca-nome">Vitafor</div>
+                <div class="desconto"><span>25%</span> de desconto</div>
+                <p class="descricao-cupom">Qualidade e eficiência em suplementação</p>
+                <div class="cupom-codigo" onclick="copiarCupom(this, 'AF91723VITAFOR')">
+                    AF91723VITAFOR
+                </div>
+                <button class="botao-copiar" onclick="copiarCupom(this.previousElementSibling, 'AF91723VITAFOR')">
+                    Copiar Código
+                </button>
+            </div>
+
+            <div class="cupom-card">
+                <div class="marca-nome">Sanavita</div>
+                <div class="desconto"><span>15%</span> de desconto</div>
+                <p class="descricao-cupom">Suplementos naturais e eficazes</p>
+                <div class="cupom-codigo" onclick="copiarCupom(this, 'NUTRI15')">
+                    NUTRI15
+                </div>
+                <button class="botao-copiar" onclick="copiarCupom(this.previousElementSibling, 'NUTRI15')">
+                    Copiar Código
+                </button>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <strong>📌 Como usar:</strong> Copie o código do cupom acima, acesse o site do parceiro e aplique o desconto no carrinho. Simples assim. Os descontos são válidos conforme políticas de cada marca.
+        </div>
+
+        <div class="cta-section">
+            <p class="cta-texto">Quer saber qual suplemento é ideal para você?</p>
+            <a href="https://wa.me/5519992591776?text=Ol%C3%A1%2C%20Ana!%20Vi%20seus%20cupons%20e%20gostaria%20de%20saber%20qual%20suplemento%20escolher." class="botao-primario">Conversar no WhatsApp</a>
+            <a href="links.html" class="botao-secundario">Voltar aos links</a>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <footer>
+        <p>Ana Fedel Nutricionista | CRN-3 91723</p>
+        <p>© 2026. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function copiarCupom(elemento, codigo) {
+            navigator.clipboard.writeText(codigo).then(() => {
+                // Feedback visual no botão
+                const botao = elemento.nextElementSibling;
+                const textoOriginal = botao.textContent;
+                botao.textContent = '✓ Copiado!';
+                botao.classList.add('copiado');
+
+                // Toast notification
+                const toast = document.getElementById('toast');
+                toast.textContent = `Cupom "${codigo}" copiado com sucesso!`;
+                toast.classList.add('show');
+
+                setTimeout(() => {
+                    botao.textContent = textoOriginal;
+                    botao.classList.remove('copiado');
+                }, 2000);
+
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 3000);
+            });
+        }
+    </script>
+</body>
+</html>
