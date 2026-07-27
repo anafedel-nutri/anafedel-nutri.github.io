@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ebooks | Ana Fedel Nutricionista — Receitas saudáveis e práticas</title>
+  <meta name="description" content="Ebooks de receitas saudáveis e práticas da nutricionista Ana Fedel: refeições rápidas para o dia a dia e receitas para Air Fryer. Entrega digital imediata.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#6E3B46">
+  <link rel="canonical" href="https://www.anafedel.com/ebooks.html">
+  <link rel="icon" href="./img/logo-s.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Ana Fedel Nutricionista">
+  <meta property="og:title" content="Ebooks | Ana Fedel Nutricionista">
+  <meta property="og:description" content="Receitas saudáveis e práticas para o seu dia a dia. Materiais digitais da nutricionista Ana Fedel.">
+  <meta property="og:url" content="https://www.anafedel.com/ebooks.html">
+
+  <!-- Fontes (mesmas do site) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Estilos do site -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Ajustes específicos da página de Ebooks (usa a paleta do site) -->
+  <style>
+    .ebooks-page {
+      background: var(--ui-bg, #FAF7F4);
+      color: var(--ui-text, #4A403F);
+    }
+    .ebooks-wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 120px 24px 40px;
+    }
+    .ebooks-breadcrumb {
+      font-family: "Jost", sans-serif;
+      font-size: 13px;
+      letter-spacing: .04em;
+      color: var(--ui-text-muted, #B89A95);
+      margin-bottom: 28px;
+    }
+    .ebooks-breadcrumb a { color: var(--ui-primary, #6E3B46); text-decoration: none; }
+    .ebooks-breadcrumb a:hover { text-decoration: underline; }
+
+    .ebooks-head { max-width: 640px; margin: 0 auto 56px; text-align: center; }
+    .ebooks-eyebrow {
+      font-family: "Jost", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ui-accent, #B89A95);
+      margin: 0 0 14px;
+    }
+    .ebooks-head h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600;
+      color: var(--ui-primary, #6E3B46);
+      font-size: clamp(2.4rem, 5vw, 3.4rem);
+      line-height: 1.08;
+      margin: 0 0 18px;
+    }
+    .ebooks-head p {
+      font-family: "Jost", sans-serif;
+      font-weight: 300;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--ui-text, #4A403F);
+      margin: 0;
+    }
+
+    .ebooks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .ebook-card {
+      background: var(--ui-surface, #FFFFFF);
+      border: 1px solid var(--ui-border, #D9C7BE);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .ebook-cover {
+      position: relative;
+      background: #F1E9E4;
+      padding: 32px 32px 0;
+      display: flex;
+      justify-content: center;
+    }
+    .ebook-cover img {
+      width: 62%;
+      max-width: 230px;
+      height: auto;
+      display: block;
+      box-shadow: 0 18px 40px rgba(46, 37, 36, .18);
+    }
+    .ebook-badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      font-family: "Jost", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--ui-on-primary, #fff);
+      background: var(--ui-primary, #6E3B46);
+      padding: 6px 12px;
+    }
+    .ebook-body { padding: 28px 28px 30px; display: flex; flex-direction: column; flex: 1; }
+    .ebook-body h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600;
+      color: var(--ui-text-heading, #2E2524);
+      font-size: 1.7rem;
+      line-height: 1.15;
+      margin: 0 0 12px;
+    }
+    .ebook-desc {
+      font-family: "Jost", sans-serif;
+      font-weight: 300;
+      font-size: .98rem;
+      line-height: 1.65;
+      color: var(--ui-text, #4A403F);
+      margin: 0 0 20px;
+    }
+    .ebook-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 26px;
+      display: grid;
+      gap: 10px;
+    }
+    .ebook-list li {
+      font-family: "Jost", sans-serif;
+      font-weight: 300;
+      font-size: .92rem;
+      color: var(--ui-text, #4A403F);
+      padding-left: 22px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .ebook-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .5em;
+      width: 7px;
+      height: 7px;
+      border: 1px solid var(--ui-primary, #6E3B46);
+      transform: rotate(45deg);
+    }
+    .ebook-cta { margin-top: auto; }
+    .ebook-buy {
+      display: block;
+      text-align: center;
+      font-family: "Jost", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ui-on-primary, #fff);
+      background: var(--ui-primary, #6E3B46);
+      padding: 15px 22px;
+      text-decoration: none;
+      transition: background .2s ease;
+    }
+    .ebook-buy:hover { background: var(--ui-primary-hover, #5A2F38); }
+    .ebook-note {
+      font-family: "Jost", sans-serif;
+      font-size: 12px;
+      letter-spacing: .02em;
+      color: var(--ui-text-muted, #B89A95);
+      text-align: center;
+      margin: 12px 0 0;
+    }
+
+    /* Bloco de fechamento / cross-sell */
+    .ebooks-closer {
+      max-width: 760px;
+      margin: 64px auto 0;
+      text-align: center;
+      border-top: 1px solid var(--ui-border, #D9C7BE);
+      padding-top: 48px;
+    }
+    .ebooks-closer h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600;
+      color: var(--ui-primary, #6E3B46);
+      font-size: clamp(1.8rem, 4vw, 2.3rem);
+      line-height: 1.15;
+      margin: 0 0 14px;
+    }
+    .ebooks-closer p {
+      font-family: "Jost", sans-serif;
+      font-weight: 300;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--ui-text, #4A403F);
+      margin: 0 auto 26px;
+      max-width: 560px;
+    }
+    .ebooks-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary-af, .btn-outline-af {
+      font-family: "Jost", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 14px 28px;
+      text-decoration: none;
+      transition: all .2s ease;
+    }
+    .btn-primary-af { background: var(--ui-primary, #6E3B46); color: #fff; }
+    .btn-primary-af:hover { background: var(--ui-primary-hover, #5A2F38); }
+    .btn-outline-af { border: 1px solid var(--ui-primary, #6E3B46); color: var(--ui-primary, #6E3B46); }
+    .btn-outline-af:hover { background: var(--ui-primary, #6E3B46); color: #fff; }
+
+    /* WhatsApp flutuante */
+    .wa-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--ui-primary, #6E3B46);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 26px rgba(46, 37, 36, .28);
+      z-index: 60;
+    }
+    .wa-float svg { width: 28px; height: 28px; fill: #fff; }
+
+    @media (max-width: 960px) {
+      .ebooks-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .ebooks-wrap { padding-top: 96px; }
+      .ebooks-grid { grid-template-columns: 1fr; gap: 24px; max-width: 420px; margin: 0 auto; }
+      .ebook-cover img { width: 55%; }
+    }
+  </style>
+</head>
+
+<body class="ebooks-page">
+
+  <header>
+    <nav id="navbar" class="site-nav scrolled" aria-label="Navegação principal">
+      <a href="index.html" class="nav-logo" aria-label="Ana Fedel Nutricionista — início">
+        <img src="./img/logo.svg" alt="" width="120" height="40" decoding="async" aria-hidden="true">
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu">
+        <span class="nav-toggle__lines" aria-hidden="true"></span>
+      </button>
+      <div id="nav-menu" class="nav-menu" aria-hidden="true">
+        <div class="nav-menu__inner">
+          <a href="index.html#planos">Planos</a>
+          <a href="index.html#metodo">Método</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="index.html#depoimentos">Depoimentos</a>
+          <a href="ebooks.html" aria-current="page">Ebooks</a>
+          <a class="nav-menu__cta" href="index.html#planos">Ver planos e valores</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="ebooks-wrap">
+      <nav class="ebooks-breadcrumb" aria-label="Você está em">
+        <a href="index.html">Início</a> · Ebooks
+      </nav>
+
+      <div class="ebooks-head">
+        <p class="ebooks-eyebrow">Materiais digitais</p>
+        <h1>Comer bem pode ser simples</h1>
+        <p>Ebooks pensados para descomplicar a rotina na cozinha — receitas leves, práticas e saborosas para quem quer cuidar da alimentação sem passar horas fazendo comida. Entrega digital imediata.</p>
+      </div>
+
+      <div class="ebooks-grid">
+
+        <!-- Ebook 1 -->
+        <article class="ebook-card">
+          <div class="ebook-cover">
+            <span class="ebook-badge">E-book · PDF</span>
+            <img src="https://hotmart.s3.amazonaws.com/product_pictures/889af25b-bd6c-45d6-9a85-ce6e2ca2c723/REFEIC_1PDF.jpg" alt="Capa do ebook 12 Refeições Rápidas e Saudáveis" loading="lazy">
+          </div>
+          <div class="ebook-body">
+            <h2>12 Refeições Rápidas e Saudáveis</h2>
+            <p class="ebook-desc">Doze refeições equilibradas e fáceis de preparar, pensadas para quem quer comer bem mesmo com uma rotina corrida — sabor e praticidade na medida certa.</p>
+            <ul class="ebook-list">
+              <li>12 refeições nutritivas para diferentes momentos do dia</li>
+              <li>Ingredientes acessíveis e fáceis de encontrar</li>
+              <li>Passo a passo simples e objetivo</li>
+              <li>Ideal para a rotina corrida</li>
+            </ul>
+            <div class="ebook-cta">
+              <a class="ebook-buy" href="https://go.hotmart.com/Q106905294O" target="_blank" rel="noopener">Quero este ebook</a>
+              <p class="ebook-note">Entrega digital imediata · Pagamento seguro pela Hotmart</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Ebook 2 -->
+        <article class="ebook-card">
+          <div class="ebook-cover">
+            <span class="ebook-badge">E-book · PDF</span>
+            <img src="https://hotmart.s3.amazonaws.com/product_pictures/0f31453b-18ff-4012-b3ca-adc564a6c3ae/Ebook_Receitas_saudaveis_para_fazer_na_Air_Fryer1pdf.jpg" alt="Capa do ebook Receitas Saudáveis na Air Fryer" loading="lazy">
+          </div>
+          <div class="ebook-body">
+            <h2>Receitas Saudáveis na Air Fryer</h2>
+            <p class="ebook-desc">Receitas práticas para a fritadeira elétrica: pratos rápidos e saborosos para o dia a dia, do café da manhã à sobremesa, com ingredientes simples.</p>
+            <ul class="ebook-list">
+              <li>Receitas rápidas e fáceis de fazer</li>
+              <li>Do café da manhã à sobremesa</li>
+              <li>Ingredientes simples e passo a passo explicado</li>
+              <li>Dicas para melhores resultados na Air Fryer</li>
+            </ul>
+            <div class="ebook-cta">
+              <a class="ebook-buy" href="https://go.hotmart.com/D106904836V" target="_blank" rel="noopener">Quero este ebook</a>
+              <p class="ebook-note">Entrega digital imediata · Pagamento seguro pela Hotmart</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Ebook 3 -->
+        <article class="ebook-card">
+          <div class="ebook-cover">
+            <span class="ebook-badge">E-book · PDF</span>
+            <img src="https://hotmart.s3.amazonaws.com/product_pictures/0f624d24-388f-406f-8908-b396daed2aee/SHAKES1PDF.jpg" alt="Capa do ebook Receitas Funcionais: Shakes com Whey Protein" loading="lazy">
+          </div>
+          <div class="ebook-body">
+            <h2>Shakes com Whey Protein</h2>
+            <p class="ebook-desc">Receitas funcionais de shakes com whey protein para o café da manhã, o lanche ou o pré e pós-treino — mais proteína na rotina, com sabor e praticidade.</p>
+            <ul class="ebook-list">
+              <li>Combinações nutritivas e saborosas</li>
+              <li>Ideais para pré e pós-treino</li>
+              <li>Rápidas de preparar, com ingredientes simples</li>
+              <li>Uma forma prática de aumentar a proteína</li>
+            </ul>
+            <div class="ebook-cta">
+              <a class="ebook-buy" href="https://go.hotmart.com/X106905541J" target="_blank" rel="noopener">Quero este ebook</a>
+              <p class="ebook-note">Entrega digital imediata · Pagamento seguro pela Hotmart</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Fechamento -->
+      <section class="ebooks-closer">
+        <h2>Quer um plano feito para você?</h2>
+        <p>Os ebooks são um ótimo primeiro passo. Mas quando o objetivo é emagrecer ou cuidar da saúde com estratégia, o acompanhamento individualizado é onde a mudança realmente acontece.</p>
+        <div class="ebooks-actions">
+          <a class="btn-primary-af" href="index.html#planos">Ver planos e valores</a>
+          <a class="btn-outline-af" href="https://wa.me/5519992591776?text=Ol%C3%A1%2C%20Ana!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20acompanhamento%20nutricional." target="_blank" rel="noopener">Tirar dúvidas no WhatsApp</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="seo-footer">
+    <span class="footer-seo-line">Ebooks · Receitas saudáveis · Campinas e online · CRN-3 91723</span>
+    <nav class="seo-footer-nav" aria-label="Páginas do site">
+      <a href="nutricionista-em-campinas.html">Campinas</a>
+      <a href="saude-hormonal-feminina.html">Nutr
