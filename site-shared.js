@@ -245,73 +245,20 @@
     syncLayout();
   }
 
-  const GCAL_SCHEDULE_URL =
-    'https://calendar.google.com/calendar/appointments/AcZssZ0dGAXsBGvjWRiKiPCUCTKC4DncZaVeOFMWxT0=?gv=true';
-  const GCAL_SCRIPT_URL = 'https://calendar.google.com/calendar/scheduling-button-script.js';
-  const GCAL_STYLE_URL = 'https://calendar.google.com/calendar/scheduling-button-script.css';
+  const SCHEDULE_URL = 'https://gaianutri.app/agendar/ana';
 
-  function loadGoogleCalendarScheduling() {
-    if (!document.querySelector('.gcal-schedule-host')) {
-      return Promise.resolve();
-    }
-    if (window.__gcalLoadPromise) return window.__gcalLoadPromise;
-
-    window.__gcalLoadPromise = new Promise((resolve, reject) => {
-      if (!document.querySelector('link[data-gcal-css]')) {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = GCAL_STYLE_URL;
-        link.setAttribute('data-gcal-css', '1');
-        document.head.appendChild(link);
-      }
-
-      if (window.calendar && window.calendar.schedulingButton) {
-        resolve();
-        return;
-      }
-
-      const script = document.createElement('script');
-      script.src = GCAL_SCRIPT_URL;
-      script.async = true;
-      script.onload = () => resolve();
-      script.onerror = () => reject(new Error('Google Calendar script failed to load'));
-      document.head.appendChild(script);
-    });
-
-    return window.__gcalLoadPromise;
-  }
-
-  function initGoogleSchedulingButtons() {
-    if (!window.calendar || !window.calendar.schedulingButton) return false;
+  function ensureSchedulingButtons() {
     document.querySelectorAll('.gcal-schedule-host').forEach((host) => {
       if (host.dataset.gcalInitialized) return;
       host.dataset.gcalInitialized = '1';
-      const marker = document.createElement('span');
-      marker.className = 'gcal-schedule-marker';
-      marker.setAttribute('aria-hidden', 'true');
-      host.appendChild(marker);
-      calendar.schedulingButton.load({
-        url: GCAL_SCHEDULE_URL,
-        color: '#6E3B46',
-        label: host.getAttribute('data-gcal-label') || 'Agendar',
-        target: marker,
-      });
+      const link = document.createElement('a');
+      link.className = 'qxCTlb';
+      link.href = SCHEDULE_URL;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = host.getAttribute('data-gcal-label') || 'Agendar';
+      host.appendChild(link);
     });
-    return true;
-  }
-
-  function ensureGoogleSchedulingButtons() {
-    if (!document.querySelector('.gcal-schedule-host')) return;
-
-    loadGoogleCalendarScheduling()
-      .then(() => {
-        if (initGoogleSchedulingButtons()) return;
-        let n = 0;
-        const id = setInterval(() => {
-          if (initGoogleSchedulingButtons() || ++n > 100) clearInterval(id);
-        }, 50);
-      })
-      .catch(() => {});
   }
 
   let testimonialCarouselReady = false;
@@ -433,7 +380,7 @@
   }
 
   function onPageReady() {
-    ensureGoogleSchedulingButtons();
+    ensureSchedulingButtons();
     initTestimonialCarousel();
   }
 
