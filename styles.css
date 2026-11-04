@@ -1280,7 +1280,7 @@ body.nav-open > main {
 
 .about-grid .about-img {
   width: 100%;
-  max-width: 440px;
+  max-width: 506px;
   justify-self: end;
 }
 
@@ -2210,7 +2210,7 @@ body.nav-open > main {
   }
 
   .about-grid .about-img {
-    width: 78%;
+    width: 90%;
     justify-self: center;
   }
 
