@@ -1273,9 +1273,15 @@ body.nav-open > main {
 /* ─── ABOUT ─── */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: start;
+  grid-template-columns: 5fr 7fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.about-grid .about-img {
+  width: 100%;
+  max-width: 440px;
+  justify-self: end;
 }
 
 .about-img {
@@ -2201,6 +2207,11 @@ body.nav-open > main {
 
   #processo.section {
     padding: 48px 20px;
+  }
+
+  .about-grid .about-img {
+    width: 78%;
+    justify-self: center;
   }
 
   #processo .section-title {
