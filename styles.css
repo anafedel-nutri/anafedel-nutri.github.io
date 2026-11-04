@@ -2989,3 +2989,109 @@ body.nav-open > main {
     transform: none;
   }
 }
+
+/* ── Canetas emagrecedoras (home) ── */
+.glp1-section {
+  padding: 110px 80px;
+  background: var(--bordeaux);
+  color: var(--cream);
+}
+.glp1-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 56px 48px;
+  border: 1px solid rgba(250, 247, 244, 0.28);
+  text-align: center;
+}
+.glp1-label {
+  display: inline-block;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #D9C7BE;
+  margin-bottom: 20px;
+}
+.glp1-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #fff;
+  margin-bottom: 24px;
+}
+.glp1-text {
+  color: rgba(250, 247, 244, 0.82);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+.glp1-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 28px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+.glp1-list li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--cream);
+  font-size: 0.95rem;
+}
+.glp1-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 10px;
+  height: 1px;
+  background: #D9C7BE;
+}
+.glp1-note {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: rgba(250, 247, 244, 0.7);
+  margin-bottom: 36px;
+}
+.glp1-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.glp1-link {
+  color: var(--cream);
+  font-size: 0.9rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+.glp1-link:hover { color: #fff; }
+@media (max-width: 768px) {
+  .glp1-section { padding: 72px 20px; }
+  .glp1-inner { padding: 40px 22px; }
+}
+
+.seo-article p a {
+  color: var(--bordeaux);
+  text-decoration: underline;
+  text-decoration-color: var(--rose-taupe);
+  text-underline-offset: 3px;
+}
+.seo-article p a:hover { text-decoration-color: var(--bordeaux); }
+.seo-article li strong { font-weight: 500; color: var(--text-title); }
+
+.plans-note {
+  max-width: 640px;
+  margin: var(--space-5) auto 0;
+  font-size: 0.9rem;
+  color: var(--ui-text);
+  opacity: 0.8;
+}

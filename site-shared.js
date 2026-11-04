@@ -75,7 +75,7 @@
   const WA_PHONE = '5519992591776';
   const WA_MSG = {
     general: 'Olá, Ana! Vim pelo site e gostaria de saber mais sobre o acompanhamento nutricional.',
-    transformar: 'Olá, Ana! Tenho interesse no Plano Transformar de 3 meses. Pode me passar mais informações?',
+    canetas: 'Olá, Ana! Uso (ou vou começar a usar) caneta emagrecedora e gostaria de saber mais sobre o acompanhamento nutricional.',
   };
 
   function track(eventName, params) {
