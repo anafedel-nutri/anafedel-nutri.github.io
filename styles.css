@@ -1275,7 +1275,7 @@ body.nav-open > main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 72px;
-  align-items: center;
+  align-items: start;
 }
 
 .about-grid .about-img {
