@@ -3021,6 +3021,26 @@ body.nav-open > main {
   color: #fff;
   margin-bottom: 24px;
 }
+.glp1-subtitle {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.95rem;
+  color: #D9C7BE;
+  margin: -8px 0 24px;
+}
+.glp1-for {
+  font-size: 0.95rem;
+  color: var(--cream);
+  margin-bottom: 12px;
+}
+.hero-glp1-link {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  text-decoration: underline;
+  text-decoration-color: #A9827B;
+  text-underline-offset: 4px;
+  line-height: 1.6;
+}
+.hero-glp1-link:hover { color: var(--bordeaux); }
 .glp1-text {
   color: rgba(250, 247, 244, 0.82);
   font-size: 1rem;
