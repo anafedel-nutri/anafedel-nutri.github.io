@@ -3201,3 +3201,15 @@ body.nav-open > main {
 @media (max-width: 480px) {
   .plans-perks { grid-template-columns: 1fr; }
 }
+
+.plans-address {
+  max-width: 640px;
+  margin: var(--space-4) auto 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--text-title);
+}
+.plans-address a { color: var(--bordeaux); text-decoration: underline; text-underline-offset: 3px; }
+.footer-address { color: inherit; text-decoration: none; }
+.footer-address:hover { text-decoration: underline; }
