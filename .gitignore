@@ -2,3 +2,7 @@
 *.md
 */*.md
 google-apps-script/VALORES-GERADOS.txt
+# Arquivos internos (nao publicar)
+*.xlsx
+google-apps-script/
+.claude/
