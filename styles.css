@@ -3213,3 +3213,15 @@ body.nav-open > main {
 .plans-address a { color: var(--bordeaux); text-decoration: underline; text-underline-offset: 3px; }
 .footer-address { color: inherit; text-decoration: none; }
 .footer-address:hover { text-decoration: underline; }
+
+/* ─── Hero no celular: título e botão visíveis na primeira tela ─── */
+@media (max-width: 767px) {
+  .hero { --hero-mobile-img-height: 34vh; padding-bottom: 40px; }
+  .hero-bg img { object-position: center 18%; }
+  .hero-left { padding-top: 20px; }
+  .hero-eyebrow { margin-bottom: 4px; }
+  .hero-trust { margin-bottom: 12px; }
+  .hero-title { font-size: 2.3rem; line-height: 1.15; margin-bottom: 14px; }
+  .hero-cta-block { gap: 18px; }
+  .hero-cta-block .hero-subtitle { font-size: 0.95rem; line-height: 1.6; }
+}
