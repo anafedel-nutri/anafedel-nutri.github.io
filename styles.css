@@ -3225,3 +3225,8 @@ body.nav-open > main {
   .hero-cta-block { gap: 18px; }
   .hero-cta-block .hero-subtitle { font-size: 0.95rem; line-height: 1.6; }
 }
+
+#diferenciais .for-whom-grid { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) {
+  #diferenciais .for-whom-grid { grid-template-columns: 1fr; }
+}
