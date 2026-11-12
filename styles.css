@@ -3368,3 +3368,13 @@ body.nav-open > main {
 @media (max-width: 700px) {
   .plans-info { grid-template-columns: 1fr; max-width: 520px; }
 }
+
+/* Consultas e valores: tons de cinza (grafite) no lugar do rosé */
+#planos {
+  --section-alt:   #E8E6E5;   /* fundo: grafite #4A403F bem claro */
+  --rose-taupe:    #4A403F;   /* rótulo "Investimento" */
+  --text-subtitle: #4A403F;   /* texto de introdução */
+  --border:        #D6D2D1;   /* linhas internas dos cards */
+  --nude:          #D6D2D1;   /* rótulos e setas no card vinho */
+  color: #4A403F;
+}
