@@ -1350,8 +1350,8 @@ body.nav-open > main {
     90deg,
     transparent 0%,
     transparent 40%,
-    rgba(214, 210, 209, 0.55) 48%,
-    rgba(214, 210, 209, 0.2) 52%,
+    rgba(232, 230, 229, 0.55) 48%,
+    rgba(232, 230, 229, 0.2) 52%,
     transparent 56%
   );
 }
@@ -1362,13 +1362,14 @@ body.nav-open > main {
   top: 0;
   bottom: 0;
   left: 0;
-  width: 18%;
+  width: 32%;
   z-index: 1;
   pointer-events: none;
   background: linear-gradient(
     90deg,
     var(--section-alt) 0%,
-    rgba(214, 210, 209, 0.35) 70%,
+    rgba(232, 230, 229, 0.85) 30%,
+    rgba(232, 230, 229, 0.4) 65%,
     transparent 100%
   );
 }
@@ -2283,7 +2284,7 @@ body.nav-open > main {
       180deg,
       transparent 0%,
       transparent 72%,
-      rgba(214, 210, 209, 0.4) 88%,
+      rgba(232, 230, 229, 0.6) 88%,
       var(--section-alt) 100%
     );
   }
@@ -2297,7 +2298,8 @@ body.nav-open > main {
     background: linear-gradient(
       180deg,
       transparent 0%,
-      rgba(214, 210, 209, 0.35) 100%
+      rgba(232, 230, 229, 0.6) 60%,
+      var(--section-alt) 100%
     );
   }
 
