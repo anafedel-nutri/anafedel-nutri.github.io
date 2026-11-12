@@ -3258,3 +3258,113 @@ body.nav-open > main {
 .how-card-num {
   font-style: italic;
 }
+
+/* ─── Consultas e valores: 2 modalidades (nov/2026) ─── */
+.plans-grid--two {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 920px;
+}
+@media (max-width: 860px) {
+  .plans-grid--two { grid-template-columns: 1fr; max-width: 520px; }
+}
+.plan-modality {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 2rem;
+  line-height: 1.15;
+  color: var(--text-title);
+}
+.plan-card.featured .plan-modality { color: #fff; }
+.plans-grid--two .plan-card__title { min-height: 0; margin-bottom: var(--space-4); }
+.plan-prices {
+  margin: 0 0 var(--space-4);
+  border-top: 1px solid var(--border);
+}
+.plan-card.featured .plan-prices { border-color: rgba(255, 255, 255, 0.25); }
+.plan-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.plan-card.featured .plan-price-row { border-color: rgba(255, 255, 255, 0.25); }
+.plan-price-row dt {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--bordeaux);
+  line-height: 1.5;
+}
+.plan-card.featured .plan-price-row dt { color: var(--nude); }
+.plan-price-row__hint {
+  display: block;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--text-body);
+  opacity: 0.8;
+}
+.plan-card.featured .plan-price-row__hint { color: rgba(255, 255, 255, 0.75); }
+.plan-price-row dd {
+  margin: 0;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+}
+.plan-price-row__value {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  line-height: 1.1;
+  color: var(--text-title);
+  white-space: nowrap;
+}
+.plan-card.featured .plan-price-row__value { color: #fff; }
+.plan-price-row__sub {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--text-body);
+  margin-top: 2px;
+}
+.plan-card.featured .plan-price-row__sub { color: rgba(255, 255, 255, 0.75); }
+.plan-card__place {
+  margin: var(--space-4) 0 0;
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--text-body);
+}
+.plan-card.featured .plan-card__place { color: rgba(255, 255, 255, 0.8); }
+.plan-card__place a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.plans-info {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  max-width: 920px;
+  margin: var(--space-6) auto 0;
+  padding: 0;
+}
+.plans-info li {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: var(--space-3);
+  border-top: 1px solid var(--bordeaux);
+  font-size: 0.9rem;
+  color: var(--text-body);
+  text-align: left;
+}
+.plans-info__label {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--bordeaux);
+}
+@media (max-width: 700px) {
+  .plans-info { grid-template-columns: 1fr; max-width: 520px; }
+}
