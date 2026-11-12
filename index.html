@@ -32,7 +32,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
     /* Modal do agendamento — telas pequenas: iframe em tela cheia; só faixa superior para o Fechar. */
@@ -105,7 +105,8 @@
       border-color: #2A0D10 !important;
     }
   </style>
-  <link rel="preload" as="image" href="./img/hero-ana-fedel-1600.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="./img/hero-ana-fedel-1600.jpg" media="(min-width: 768px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="./img/hero-ana-fedel-mobile.jpg" media="(max-width: 767px)" fetchpriority="high" />
 
   <script type="application/ld+json">
   {
@@ -849,6 +850,18 @@
       } else {
         initPage();
       }
+    })();
+  </script>
+  <script>
+    (function () {
+      var btn = document.querySelector('.whatsapp-float');
+      var hero = document.getElementById('inicio');
+      if (!btn || !hero) return;
+      function update() {
+        btn.classList.toggle('is-visible', window.scrollY > hero.offsetHeight * 0.85);
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
     })();
   </script>
   <script src="site-shared.js" defer></script>
