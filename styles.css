@@ -3601,10 +3601,19 @@ body.nav-open > main {
   body .faq-grid { gap: 8px; }
   body .faq-item summary.faq-question { padding: 14px 16px; font-size: 0.92rem; }
 
-  /* Rodapé: links em duas colunas */
-  body .site-footer { padding-top: 36px; padding-bottom: 28px; gap: 24px; }
-  body .footer-links { display: grid; grid-template-columns: 1fr 1fr; column-gap: 16px; row-gap: 2px; }
-  body .footer-links .footer-col-title { grid-column: 1 / -1; }
-  body .footer-links a { font-size: 0.82rem; padding-top: 5px; padding-bottom: 5px; margin: 0; }
+  /* Rodapé compacto: tudo centralizado, links em linha */
+  body .site-footer { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 32px 20px 20px; gap: 18px; }
+  body .site-footer img { height: 52px; margin: 0 auto 10px; }
+  body .site-footer > div:first-child p { margin: 0; font-size: 0.8rem; line-height: 1.6; }
+  body .footer-info-line { justify-content: center; }
+  body .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 0; max-width: 340px; }
+  body .footer-links .footer-col-title,
+  body .footer-social .footer-col-title { display: none; }
+  body .footer-links a { font-size: 0.76rem; line-height: 1.5; padding: 0; margin: 0; white-space: nowrap; }
+  body .footer-links a:not(:last-child)::after { content: "·"; margin: 0 7px; opacity: 0.5; }
+  body .footer-social { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 22px; }
+  body .footer-social-link { margin: 0 !important; padding: 0; font-size: 0.85rem; }
+  body .footer-bottom .footer-seo-line { font-size: 0.74rem; }
+  body .footer-bottom { padding: 14px 20px 18px; font-size: 0.7rem; line-height: 1.6; }
 }
 @media (min-width: 768px) { .plans-swipe-hint { display: none; } }
