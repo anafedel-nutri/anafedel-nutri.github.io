@@ -3511,6 +3511,8 @@ body.nav-open > main {
   body .section-pain { font-size: 0.95rem; line-height: 1.6; }
   body #especialidades .section-pain { margin-bottom: 1.25rem !important; }
   body .hero { padding-bottom: 28px; }
+  body .hero { --hero-mobile-img-height: 40vh; }
+  body .hero-bg img { object-position: center 6%; }
   body .hero-glp1-link { margin-top: 4px; }
 
   /* Especialidades: 2 x 2 */
