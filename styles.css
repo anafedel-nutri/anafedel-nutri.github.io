@@ -3500,3 +3500,109 @@ body.nav-open > main {
   /* 10. Remove o quadrado decorativo sobre a foto */
   .about-img-accent { display: none; }
 }
+
+/* ═══ MOBILE COMPACTO (nov/2026) — site mais curto e escaneável no celular ═══ */
+@media (max-width: 767px) {
+  /* Ritmo geral das seções */
+  body .section { padding-top: 44px; padding-bottom: 44px; }
+  body #identificacao.section { padding-top: 36px; padding-bottom: 8px; }
+  body .section-label { margin-bottom: 8px; font-size: 10.5px; }
+  body .section-title { font-size: 1.65rem; line-height: 1.2; margin-bottom: 10px; }
+  body .section-pain { font-size: 0.95rem; line-height: 1.6; }
+  body #especialidades .section-pain { margin-bottom: 1.25rem !important; }
+  body .hero { padding-bottom: 28px; }
+  body .hero-glp1-link { margin-top: 4px; }
+
+  /* Especialidades: 2 x 2 */
+  body #especialidades .for-whom-grid { grid-template-columns: 1fr 1fr; gap: 10px; align-items: stretch; }
+  body #especialidades .for-whom-item { height: 100%; }
+  body #especialidades .for-whom-item { padding: 16px 14px; display: flex; flex-direction: column; }
+  body #especialidades .for-whom-heading { font-size: 0.68rem; letter-spacing: 0.12em; margin-bottom: 8px; }
+  body #especialidades .for-whom-item p { font-size: 0.82rem; line-height: 1.5; margin-bottom: 10px; }
+  body #especialidades .for-whom-link { font-size: 0.78rem; margin-top: auto; }
+
+  /* Processo: número ao lado do texto */
+  body .how-grid { gap: 10px; }
+  body .how-card { display: grid; grid-template-columns: 44px 1fr; column-gap: 12px; padding: 16px; align-items: start; }
+  body .how-card-num { font-size: 1.9rem; line-height: 1; margin: 0; grid-row: span 3; }
+  body .how-card h3 { margin: 2px 0 6px; }
+  body .how-card p { font-size: 0.88rem; line-height: 1.55; margin: 0; }
+  body .how-card-more { grid-column: 2; margin-top: 6px; }
+
+  /* Diferenciais: blocos enxutos e colados no Processo */
+  body #processo.section { padding-bottom: 20px; }
+  body #diferenciais.section { padding-top: 20px; }
+  body #diferenciais .for-whom-grid { gap: 10px; }
+  body #diferenciais .for-whom-item { padding: 16px; }
+  body #diferenciais .for-whom-heading { margin-bottom: 6px; }
+  body #diferenciais .for-whom-item p { font-size: 0.88rem; line-height: 1.55; margin: 0; }
+
+  /* Canetas */
+  body .glp1-section { padding: 36px 16px; }
+  body .glp1-inner { padding: 28px 20px; }
+  body .glp1-title { font-size: 1.6rem; line-height: 1.2; margin-bottom: 10px; }
+  body .glp1-subtitle { margin-bottom: 12px; font-size: 0.92rem; }
+  body .glp1-text { font-size: 0.9rem; line-height: 1.6; margin-bottom: 14px; }
+  body .glp1-list { margin-bottom: 14px; gap: 2px; }
+  body .glp1-list li { font-size: 0.88rem; padding-top: 4px; padding-bottom: 4px; }
+  body .glp1-for { font-size: 0.88rem; margin-bottom: 8px; }
+  body .glp1-note { font-size: 0.85rem; margin-bottom: 18px; }
+  body .glp1-actions { gap: 12px; }
+
+  /* Valores: os dois planos lado a lado, deslizando com o dedo */
+  body #planos .plans-intro { margin-bottom: 18px; }
+  body .plans-grid--two {
+    display: flex; grid-template-columns: none; max-width: none;
+    overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px;
+    margin: 0 -20px; padding: 4px 20px 12px; scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  body .plans-grid--two::-webkit-scrollbar { display: none; }
+  body .plans-grid--two .plan-card {
+    flex: 0 0 86%; scroll-snap-align: center; padding: 26px 20px; transform: none;
+  }
+  body .plans-grid--two .plan-card__title { margin-bottom: 10px; }
+  body .plans-grid--two .plan-modality { font-size: 1.6rem; }
+  body .plans-grid--two .plan-price-row { padding-top: 10px; padding-bottom: 10px; }
+  body .plans-grid--two .plan-card ul { margin-top: 8px; margin-bottom: 8px; }
+  body .plans-grid--two .plan-card li { font-size: 0.84rem; line-height: 1.45; padding-top: 7px; padding-bottom: 7px; }
+  body .plans-grid--two .plan-card__place { font-size: 0.82rem; margin-bottom: 14px; }
+  body .plans-swipe-hint { display: block !important; text-align: center; font-size: 0.75rem; letter-spacing: 0.08em; color: var(--rose-taupe, #A9827B); margin: 2px 0 0; }
+  body .plans-info { margin-top: 18px; }
+  body .plans-info li { padding: 8px 12px; font-size: 0.85rem; }
+  body .plans-grid--two .plan-prices { margin-bottom: 4px; }
+  body .plans-glp1, body .plans-note { font-size: 0.88rem; margin-top: 14px; }
+
+  /* Depoimentos */
+  body #depoimentos .plans-intro { margin-bottom: 16px; }
+  body .testimonial-card { padding: 22px 20px; }
+
+  /* Sobre: foto menor */
+  body #sobre .about-grid { gap: 22px; }
+  body #sobre .about-img { max-width: 280px; margin: 0 auto; justify-self: center; }
+  body #sobre .about-img-accent { display: none; }
+  body #sobre .about-text p { font-size: 0.93rem; line-height: 1.65; margin-bottom: 12px; }
+  body #sobre .about-text h2 { margin-bottom: 12px; }
+
+  /* Método */
+  body #metodo .philosophy-grid { gap: 20px; }
+  body #metodo .philosophy-item { padding-top: 0; padding-bottom: 14px; margin-bottom: 14px; }
+  body #metodo .philosophy-item p { font-size: 0.9rem; line-height: 1.6; }
+  body #metodo .philosophy-title { font-size: 1.5rem; margin-bottom: 8px; }
+
+  /* CTA */
+  body .cta-section { padding: 48px 20px; }
+  body .cta-section h2 { font-size: 1.7rem; margin-bottom: 10px; }
+  body .cta-section p { margin-bottom: 20px; }
+
+  /* FAQ */
+  body .faq-grid { gap: 8px; }
+  body .faq-item summary.faq-question { padding: 14px 16px; font-size: 0.92rem; }
+
+  /* Rodapé: links em duas colunas */
+  body .site-footer { padding-top: 36px; padding-bottom: 28px; gap: 24px; }
+  body .footer-links { display: grid; grid-template-columns: 1fr 1fr; column-gap: 16px; row-gap: 2px; }
+  body .footer-links .footer-col-title { grid-column: 1 / -1; }
+  body .footer-links a { font-size: 0.82rem; padding-top: 5px; padding-bottom: 5px; margin: 0; }
+}
+@media (min-width: 768px) { .plans-swipe-hint { display: none; } }
